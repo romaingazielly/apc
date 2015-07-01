@@ -12,6 +12,57 @@
 */
 
 /*------------------------------------*\
+    FONTS
+\*------------------------------------*/
+@font-face {
+  font-family: 'LeagueGothic-CondensedItalic';
+  src: url('fonts/LeagueGothic-CondensedItalic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/LeagueGothic-CondensedItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/LeagueGothic-CondensedItalic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/LeagueGothic-CondensedItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/LeagueGothic-CondensedItalic.svg#3bfcfe5caefb6255cef1067fd1481ebf') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'LeagueGothic-CondensedRegular';
+  src: url('fonts/LeagueGothic-CondensedRegular.eot'); /* IE9 Compat Modes */
+  src: url('fonts/LeagueGothic-CondensedRegular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/LeagueGothic-CondensedRegular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/LeagueGothic-CondensedRegular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/LeagueGothic-CondensedRegular.svg#b5877850f340171af1593b7065c4f5cc') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'LeagueGothic-Italic';
+  src: url('fonts/LeagueGothic-Italic.eot'); /* IE9 Compat Modes */
+  src: url('fonts/LeagueGothic-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/LeagueGothic-Italic.woff') format('woff'), /* Modern Browsers */
+       url('fonts/LeagueGothic-Italic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/LeagueGothic-Italic.svg#5d86fd6fea9e198c50e397ac10c756e7') format('svg'); /* Legacy iOS */
+       
+  font-style:   italic;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'LeagueGothic-Regular';
+  src: url('fonts/LeagueGothic-Regular.eot'); /* IE9 Compat Modes */
+  src: url('fonts/LeagueGothic-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('fonts/LeagueGothic-Regular.woff') format('woff'), /* Modern Browsers */
+       url('fonts/LeagueGothic-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('fonts/LeagueGothic-Regular.svg#32708577450339e41be87b9892799777') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  400;
+}
+
+/*------------------------------------*\
     MAIN
 \*------------------------------------*/
 
@@ -30,7 +81,7 @@ html {
 	font-size:62.5%;
 }
 body {
-	font:300 11px/1.4 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font:300 11px/1.4 'LeagueGothic-Regular', Helvetica, Arial, sans-serif;
 	color:#444;
 }
 /* clear */
@@ -68,6 +119,28 @@ input:focus {
 	outline:0;
 	border:1px solid #04A4CC;
 }
+
+/*------------------------------------*\
+    INTRO
+\*------------------------------------*/
+.prehome{position:fixed; top:0; bottom:0; left:0; right:0; background:#545456; z-index:999; font:25px "LeagueGothic-Regular", "Arial";}
+#anim-container{position:relative; overflow:hidden; text-align:right; background:#fff; padding-top:50px; padding-bottom:150px; text-transform:uppercase;}
+#anim-container.clickable{cursor:pointer;}
+#firstline{position:relative; height:10px; margin-bottom:3px; left:-100%;}
+#secline{position:relative; background:#ce302d; padding:25px 10% 25px 0; margin-bottom:3px; left:100%;}
+#secline img{width:auto; max-width:100%; opacity:0;}
+#sentence, #acces{opacity:0;}
+#thirdline{position:relative; left:-100%; color:#fff; padding:5px 10% 5px 0;}
+#thirdline .red{position:relative; padding-right:40px}
+#thirdline .red:after{position:absolute; top:3px; right:20px; content:""; border: solid 10px #ce302d; border-top-color:transparent; border-bottom-color:transparent; border-left-color:transparent; width:0;}
+#fourthline{position:relative; margin-top:30px; padding:5px 10% 5px 0; background:#333; color:#fff; left:-100%;}
+#fourthline span{opacity:0;}
+#lastline{padding-top:25px; position:relative; left:-100%;}
+#lastline:before{opacity:0; display:block; position:relative; content:"Architecture des 5 sens"; padding:30px 10% 5px 0;}
+#lastline:after{content:""; display:block; width:100%; height:10px; background:#ce302d;}
+#chinois{padding:5px 10% 5px 0; opacity:0;}
+.grey{background:#333;}
+.red{color:#ce302d;}
 
 /*------------------------------------*\
     STRUCTURE

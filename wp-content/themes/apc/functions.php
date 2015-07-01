@@ -98,18 +98,29 @@ function html5blank_header_scripts()
         wp_register_script('modernizr', get_template_directory_uri() . '/js/lib/modernizr-2.7.1.min.js', array(), '2.7.1'); // Modernizr
         wp_enqueue_script('modernizr'); // Enqueue it!
 
+        wp_register_script('jquery', get_template_directory_uri() . '/js/lib/jquery.min.js', array('jquery'), '1.11.3'); // jquery
+        wp_enqueue_script('jquery'); // Enqueue it!
+
+        wp_register_script('TweenMax', get_template_directory_uri() . '/js/lib/TweenMax.min.js', array(), '1.17'); // TweenMax
+        wp_enqueue_script('TweenMax'); // Enqueue it!
+
+        wp_register_script('TimelineMax', get_template_directory_uri() . '/js/lib/TimelineMax.min.js', array(), '1.17'); // TimelineMax
+        wp_enqueue_script('TimelineMax'); // Enqueue it!
+
         wp_register_script('html5blankscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
         wp_enqueue_script('html5blankscripts'); // Enqueue it!
+
+
     }
 }
 
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
 {
-    if (is_page('pagenamehere')) {
-        wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
-        wp_enqueue_script('scriptname'); // Enqueue it!
-    }
+    // if (is_page('pagenamehere')) {
+    //     wp_register_script('scriptname', get_template_directory_uri() . '/js/scriptname.js', array('jquery'), '1.0.0'); // Conditional script(s)
+    //     wp_enqueue_script('scriptname'); // Enqueue it!
+    // }
 }
 
 // Load HTML5 Blank styles

@@ -25,6 +25,25 @@
 	</head>
 	<body <?php body_class(); ?>>
 
+		<!-- intro -->
+		<section class="prehome">
+			<div id="anim-container">
+				<div id="firstline" class="grey"></div>
+				<div id="secline">
+					<img src="<?php echo get_template_directory_uri(); ?>/img/apc.svg" alt="APC">
+				</div>
+				<div id="thirdline" class="grey">
+					<span class="red" id="acces">Accès au site</span>
+					<span id="sentence">Architecture - Programmation - Conseil</span>
+				</div>
+				<div id="fourthline">
+					<span>Atelier - Perspective - Couleur</span>
+				</div>
+				<div id="lastline"></div>
+				<img src="<?php echo get_template_directory_uri(); ?>/img/chinois.png" id="chinois" alt="Chinois">
+			</div>
+		</section>
+
 		<!-- wrapper -->
 		<div class="wrapper">
 
