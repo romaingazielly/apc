@@ -1,4 +1,10 @@
+<?php query_posts('post_type=project'); ?> <!-- https://codex.wordpress.org/Class_Reference/WP_Query#Parameters -->
+
 <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
+	<!-- Appel des champs ACF -->
+	<?php echo get_post_meta($post->ID, 'url_video', true); ?>
+	<?php echo get_post_meta($post->ID, 'vignette', true); ?>
 
 	<!-- article -->
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

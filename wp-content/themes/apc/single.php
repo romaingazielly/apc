@@ -10,10 +10,9 @@
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-					<?php the_post_thumbnail(); // Fullsize image for the single post ?>
-				</a>
+			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists 
+				$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+				<img src="<?php echo $url; ?>" longdesc="URL_2" alt="Text_2" />
 			<?php endif; ?>
 			<!-- /post thumbnail -->
 
