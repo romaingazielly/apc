@@ -18,6 +18,53 @@
 		else{
 			jQuery('.prehome').hide();
 		}
+
+		// Carousel
+		jQuery('.photos').on('initialized.owl.carousel', function(){
+			// Vars
+			var imgH = jQuery('.photos').height();
+			var h1H = jQuery('.infos h1').height();
+			setTimeout(function() { var h2H = jQuery('.infos h2').height(); jQuery('.infos p').height(imgH-(69 + h1H + h2H)); console.log(h2H)}, 500);
+			//
+
+			// Adaptation du bloc info par rapport à la taille de l'image
+			jQuery('.infos').height(imgH);
+
+			// Adaptation de la hauteur du contenu
+			// jQuery('.infos p').height(imgH-(69 + h1H + h2H));
+		});
+
+		jQuery('.photos').owlCarousel({
+			items:1,
+			autoplay:true,
+			navRewind:true,
+			loop:true,
+			autoplayTimeout:5000,
+			smartSpeed:1200,
+			dots:true
+		});
+
+		jQuery(window).resize(function(event){
+			var imgH = jQuery('.photos').height();
+			jQuery('.infos').height(imgH);
+		})
+
+		
+		// Effet hover home
+		jQuery('.mini').hover(function() {
+			jQuery('.mini').removeClass('giant');
+			jQuery(this).addClass('giant');
+		}, function() {
+			setTimeout(function(){
+				jQuery(this).removeClass('giant');
+			},200)
+		});
+
+		jQuery('.bigger').on('click', function(e) {
+			e.preventDefault();
+			var lien = jQuery(this).siblings('a').attr('href');
+			document.location.href = lien;
+		});
 	});
 	
 })(jQuery, this);

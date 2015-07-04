@@ -1,42 +1,30 @@
 <?php query_posts('post_type=project'); ?> <!-- https://codex.wordpress.org/Class_Reference/WP_Query#Parameters -->
 
-<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+
 
 	<!-- Appel des champs ACF -->
-	<?php echo get_post_meta($post->ID, 'url_video', true); ?>
-	<?php echo get_post_meta($post->ID, 'vignette', true); ?>
+	<?php //echo get_post_meta($post->ID, 'url_video', true); ?>
 
 	<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+	<article class="list">
 
-		<!-- post thumbnail -->
-		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-			</a>
-		<?php endif; ?>
-		<!-- /post thumbnail -->
+		<?php if (have_posts()): while (have_posts()) : the_post(); ?><!-- 
+		--><div class="mini">
+				<!-- post thumbnail -->
+				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists 
+					$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 
-		<!-- post title -->
-		<h2>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-		</h2>
-		<!-- /post title -->
-
-		<!-- post details -->
-		<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-		<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-		<!-- /post details -->
-
-		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
-
-		<?php edit_post_link(); ?>
+					<img class="bigger" src="<?php echo $url; ?>" longdesc="URL_2" alt="Text_2" />
+					<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+						<img src="<?php echo $url; ?>" longdesc="URL_2" alt="Text_2" />
+					</a>
+				<?php endif; ?>
+				<!-- /post thumbnail -->
+			</div><!--
+	--><?php endwhile; ?>
 
 	</article>
 	<!-- /article -->
-
-<?php endwhile; ?>
 
 <?php else: ?>
 

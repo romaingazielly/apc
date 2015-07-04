@@ -1,15 +1,26 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 
-				<!-- copyright -->
-				<p class="copyright">
-					© Atelier Patrick Corda - architecture programmation conseil
-				</p>
-				<!-- /copyright -->
-				<p class="external-links">
-					<a href="#">Crédits</a>
-					<a href="#">Mentions légales</a>
-				</p>
+				<!-- nav -->
+					<nav class="nav" role="navigation">
+						<ul>
+							<li><a href="#">L'agence</a></li><!-- 
+						 --><li>
+								<a href="#">Realisations</a>
+								<ul>
+									<li><a href="#">Logements</a></li>
+									<li><a href="#">Urbanisme</a></li>
+									<li><a href="#">Municipalite</a></li>
+									<li><a href="#">Concours</a></li>
+								</ul>
+							</li><!-- 
+						 --><li><a href="#">Actualites</a></li><!-- 
+						 --><li><a href="#">Enseignement</a></li><!-- 
+						 --><li><a href="#">Carnet d'adresses</a></li><!-- 
+						 --><li><a href="#">Contact</a></li>
+						</ul>
+					</nav>
+				<!-- /nav -->
 
 			</footer>
 			<!-- /footer -->
@@ -18,6 +29,8 @@
 		<!-- /wrapper -->
 
 		<?php wp_footer(); ?>
+
+		<script src="<?php echo get_template_directory_uri(); ?>/js/lib/owl.carousel.min.js"></script>
 
 		<!-- analytics -->
 		<script>

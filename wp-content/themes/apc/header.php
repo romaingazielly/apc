@@ -7,6 +7,7 @@
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
         <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
+        <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/owl.carousel.css" />
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -50,6 +51,10 @@
 			<!-- header -->
 			<header class="header clear" role="banner">
 
+					<aside class="diapo">
+						<a href="javascript:;" id="player"></a>
+					</aside>
+
 					<!-- logo -->
 					<div class="logo">
 						<a href="<?php echo home_url(); ?>">
@@ -57,26 +62,6 @@
 						</a>
 					</div>
 					<!-- /logo -->
-
-					<!-- nav -->
-					<nav class="nav" role="navigation">
-						<ul>
-							<li><a href="#">L'agence</a></li>
-							<li>
-								<a href="#">Réalisations</a>
-								<ul>
-									<li><a href="#">Logements</a></li>
-									<li><a href="#">Urbanisme</a></li>
-									<li><a href="#">Municipalite</a></li>
-									<li><a href="#">Concours</a></li>
-								</ul>
-							</li>
-							<li><a href="#">Actualités Enseignement</a></li>
-							<li><a href="#">Carnet d'adresses</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</nav>
-					<!-- /nav -->
 
 			</header>
 			<!-- /header -->

@@ -2,7 +2,7 @@
 
 	<main role="main">
 		<!-- section -->
-		<section>
+		<section class="container">
 
 			<?php get_template_part('loop'); ?>
 

@@ -7,38 +7,27 @@
 	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
 		<!-- article -->
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+		<article class="projet" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<!-- post thumbnail -->
-			<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists 
-				$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
-				<img src="<?php echo $url; ?>" longdesc="URL_2" alt="Text_2" />
-			<?php endif; ?>
-			<!-- /post thumbnail -->
-
-			<!-- post title -->
-			<h1>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-			</h1>
-			<!-- /post title -->
-
-			<!-- post details -->
-			<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-			<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-			<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-			<!-- /post details -->
-
-			<?php the_content(); // Dynamic Content ?>
-
-			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
-
-			<p><?php _e( 'Categorised in: ', 'html5blank' ); the_category(', '); // Separated by commas ?></p>
-
-			<p><?php _e( 'This post was written by ', 'html5blank' ); the_author(); ?></p>
-
-			<?php edit_post_link(); // Always handy to have Edit Post Links available ?>
-
-			<?php comments_template(); ?>
+			<section class="photos">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/img.jpg" id="img" alt="img">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/img.jpg" id="img" alt="img">
+			</section><!-- 
+		 --><aside class="infos">
+				<div>
+					<h1>Centre culturel</h1>
+					<h2>Equipements - 2012</h2>
+					<p>Aenean id elementum sapien. Integer sagittis augue felis, at pharetra neque vehicula ut. Aliquam iaculis risus venenatt. Aliquam iaculis risus venenatt. Aliquam iaculis risus venenatt. Aliquam iaculis risus venenatis volutpat interdum. Quisque in nibh id ex efficitur congue nec eu purus. Vestibulum a euismod nisi. Phasellus ornare congue quam, sed placerat dui. Aenean interdum, quam at vulputate efficitur, ligula eros egestas lectus, quis fermentum erat quam nec odio. Vestibulum tellus quam, hendrerit at congue eget, consequat nec felis. Curabitur bibendum consectetur fermentum. dui. Aenean interdum, quam at vulputate efficitur, ligula eros egestas lectus, quis fermentum erat quam nec odio. Vestibulum tellus quam, hendrerit at congue eget, consequat nec felis. Curabitur bibendum consectetur fermentum</p>
+				</div>
+				<ul class="medias">
+					<li>
+						<a id="informations" href="javascript:;"></a>
+					</li><!-- 
+				 --><li>
+						<a id="video" href="javascript:;"></a>
+					</li>
+				</ul>
+			</aside>
 
 		</article>
 		<!-- /article -->
@@ -60,7 +49,5 @@
 	</section>
 	<!-- /section -->
 	</main>
-
-<?php get_sidebar(); ?>
 
 <?php get_footer(); ?>
