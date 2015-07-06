@@ -23,6 +23,8 @@
 			</div><!--
 	--><?php endwhile; ?>
 
+		<p><?php $coucou = get_post_meta($post->ID, 'url_video', true); echo $coucou?></p>
+
 	</article>
 	<!-- /article -->
 

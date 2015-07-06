@@ -41,6 +41,7 @@
 			loop:true,
 			autoplayTimeout:5000,
 			smartSpeed:1200,
+			autoplayHoverPause:true,
 			dots:true
 		});
 
@@ -65,6 +66,8 @@
 			var lien = jQuery(this).siblings('a').attr('href');
 			document.location.href = lien;
 		});
+
+		popAnim(); // Animation des vignettes au chargement de la page
 	});
 	
 })(jQuery, this);
@@ -91,6 +94,15 @@ function animateIntro() {
 	tl.to(jQuery('#fourthline span'), .4, {css:{autoAlpha:1}}); // 2e Phrases
 	tl.to(jQuery('#chinois'), .4, {css:{autoAlpha:1}});
 	tl.to(jQuery('#acces'), .4, {css:{autoAlpha:1}});
+}
+
+function popAnim(){
+	jQuery('.mini').each(function(index, el) {
+		var elem = jQuery(this);
+		setTimeout(function(){
+			elem.addClass('visible');
+		}, index*150);
+	});
 }
 
 function linkIt(){
