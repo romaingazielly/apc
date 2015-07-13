@@ -178,7 +178,8 @@ header .logo{position:absolute; top:4px; right:20px;}
 /*------------------------------------*\
     FOOTER
 \*------------------------------------*/
-footer{width:calc(100% - 40px); border-top:solid 2px #1d1d1d; margin:20px;}
+footer{position:fixed; bottom:0; z-index:300; width:calc(100% - 40px); border-top:solid 2px #1d1d1d; margin:20px 20px 0 20px; background:#fafafa;}
+footer nav{padding-bottom:13px;}
 footer nav > ul > li {position:relative; display:inline-block; vertical-align:middle; width:16.6666667%}
 footer nav > ul > li:hover:before{content:""; position:absolute; display:block; top:0; width:60%; height:6px; background:#ca2026;}
 footer nav > ul > li a{display:block; padding:12px 0 0 0; text-transform:uppercase; font:20px "LeagueGothic-Regular"; color:#696969; width:100%;}
@@ -203,7 +204,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 /*------------------------------------*\
     PAGES
 \*------------------------------------*/
-.projet{width:100%; padding:0 20px; /* 937 ÷ 1160 */}
+.projet{width:100%; padding:0 20px; /* 937 ÷ 1160 */ margin-bottom:61px;}
 .photos{display:inline-block; width:80.775862%; vertical-align:top;}
 .photos img{width:auto; max-width:100%}
 .owl-controls{position:absolute; bottom:20px; width:100%; text-align:center; z-index:5;}
@@ -225,7 +226,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
     PROJECT LIST
 \*------------------------------------*/
 .list{margin:20px 20px 0 0; }
-.mini{position:relative; width:18.305085%; /* 216 ÷ 1180 */ display:inline-block; margin:0 0 20px 20px; opacity:0; transition:opacity .3s ease-in; z-index:3;}
+.mini{position:relative; width:18.305085%; /* 216 ÷ 1080 */ display:inline-block; margin:0 0 20px 20px; opacity:0; transition:opacity .3s ease-in; z-index:3;}
 .mini.visible{opacity:1;}
 .mini a{display:block; margin:0;}
 .mini img{width:100%; height:100%; max-width:none}

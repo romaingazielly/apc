@@ -17,6 +17,7 @@
 		}
 		else{
 			jQuery('.prehome').hide();
+			popAnim();
 		}
 
 		// Carousel
@@ -37,9 +38,11 @@
 		jQuery('.photos').owlCarousel({
 			items:1,
 			autoplay:true,
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
 			navRewind:true,
 			loop:true,
-			autoplayTimeout:5000,
+			autoplayTimeout:2000,
 			smartSpeed:1200,
 			autoplayHoverPause:true,
 			dots:true
@@ -66,8 +69,6 @@
 			var lien = jQuery(this).siblings('a').attr('href');
 			document.location.href = lien;
 		});
-
-		popAnim(); // Animation des vignettes au chargement de la page
 	});
 	
 })(jQuery, this);
@@ -97,6 +98,8 @@ function animateIntro() {
 }
 
 function popAnim(){
+
+	// Lance l'appartition des petites vignettes de la home
 	jQuery('.mini').each(function(index, el) {
 		var elem = jQuery(this);
 		setTimeout(function(){
@@ -108,8 +111,11 @@ function popAnim(){
 function linkIt(){
 	jQuery('#anim-container').addClass('clickable').on('click', function(event) {
 		event.preventDefault();
+
+		// Quand la préhome disparait
 		jQuery('.prehome').fadeOut(function() {
-			setCookie('prehome','false');
+			//setCookie('prehome','false');
+			popAnim();
 		});
 	});
 }

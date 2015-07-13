@@ -11,7 +11,7 @@
 
 			<section class="photos">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/img.jpg" id="img" alt="img">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/img.jpg" id="img" alt="img">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/660.jpg" id="img" alt="img">
 			</section><!-- 
 		 --><aside class="infos">
 				<div>
