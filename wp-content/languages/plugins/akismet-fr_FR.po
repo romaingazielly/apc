@@ -491,7 +491,7 @@ msgstr "Akismet a validé ce commentaire suite à une revérification automatiqu
 msgid "View comment history"
 msgstr "Voir l&rsquo;historique du commentaire"
 
-#. #-#-#-#-#  akismet.pot (Akismet 3.1.3a1)  #-#-#-#-#
+#. #-#-#-#-#  akismet.pot (Akismet 3.1.4a1)  #-#-#-#-#
 #. Plugin Name of the plugin/theme
 #: class.akismet-admin.php:76 class.akismet-admin.php:78
 #: class.akismet-admin.php:842 views/config.php:3

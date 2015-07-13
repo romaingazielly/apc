@@ -42,6 +42,7 @@
 				</div>
 				<div id="lastline"></div>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/chinois.png" id="chinois" alt="Chinois">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/bg-intro.png" id="intro" alt="Intro">
 			</div>
 		</section>
 

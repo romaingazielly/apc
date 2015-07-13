@@ -164,6 +164,7 @@ input:focus {
 #lastline:before{opacity:0; display:block; position:relative; content:"Architecture des 5 sens"; padding:30px 10% 5px 0;}
 #lastline:after{content:""; display:block; width:100%; height:10px; background:#ce302d;}
 #chinois{padding:5px 10% 5px 0; opacity:0;}
+#intro{position:absolute; top:0; right:0;}
 .grey{background:#333;}
 .red{color:#ce302d;}
 

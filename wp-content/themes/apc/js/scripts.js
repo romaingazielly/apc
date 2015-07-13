@@ -69,6 +69,13 @@
 			var lien = jQuery(this).siblings('a').attr('href');
 			document.location.href = lien;
 		});
+
+
+		// Diaporama
+		jQuery('#player').on('click', function(event) {
+			event.preventDefault();
+			playDiapo();
+		});
 	});
 	
 })(jQuery, this);
@@ -114,10 +121,17 @@ function linkIt(){
 
 		// Quand la préhome disparait
 		jQuery('.prehome').fadeOut(function() {
-			//setCookie('prehome','false');
+			setCookie('prehome','false');
 			popAnim();
 		});
 	});
+}
+
+function playDiapo(){
+	TweenMax.fromTo(jQuery('header'), .5, {css:{top:'0%'}}, {css:{top:'-90px'}}); // Masque le header
+	TweenMax.fromTo(jQuery('footer'), .5, {css:{bottom:'0%'}}, {css:{bottom:'-51px'}}); // Masque le footer
+
+	// Appel Ajax de la 1ere grande image
 }
 
 function setCookie(key, value) {
