@@ -171,7 +171,7 @@ input:focus {
 /*------------------------------------*\
     HEADER
 \*------------------------------------*/
-header{position:relative; display:block; height:90px; border-bottom:solid 1px #f2f2f2;}
+header{position:relative; display:block; height:90px; background:#fff; border-bottom:solid 1px #f2f2f2; z-index:300;}
 header .diapo{height:55px; width:90%; margin:10px 0 0 20px; border-top:solid 2px #d7d7d7; border-bottom:solid 2px #d7d7d7;}
 header #player{position:relative; display:block; margin:3px 0; width:45px; height:45px; background:url('img/play.png');}
 header .logo{position:absolute; top:4px; right:20px;}
@@ -241,19 +241,10 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .mini:last-child:hover img.bigger{transform-origin:right bottom;}
 
 /*------------------------------------*\
-	TYPOGRAPHY
+    DIAPO
 \*------------------------------------*/
-
-@font-face {
-	font-family:'Font-Name';
-	src:url('fonts/font-name.eot');
-	src:url('fonts/font-name.eot?#iefix') format('embedded-opentype'),
-		url('fonts/font-name.woff') format('woff'),
-		url('fonts/font-name.ttf') format('truetype'),
-		url('fonts/font-name.svg#font-name') format('svg');
-    font-weight:normal;
-    font-style:normal;
-}
+#diapo{position:fixed; display:none; top:0; left:0; opacity:0; z-index: 100;}
+#diapo:after{content:"© Atelier Patrick Corda - architecture programmation conseil"; position:fixed; bottom:20px; left:20px; color:#fff; font:11px "Lato-Regular"; text-transform:uppercase; pointer-events:none;}
 
 /*------------------------------------*\
     RESPONSIVE

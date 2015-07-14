@@ -128,10 +128,23 @@ function linkIt(){
 }
 
 function playDiapo(){
-	TweenMax.fromTo(jQuery('header'), .5, {css:{top:'0%'}}, {css:{top:'-90px'}}); // Masque le header
-	TweenMax.fromTo(jQuery('footer'), .5, {css:{bottom:'0%'}}, {css:{bottom:'-51px'}}); // Masque le footer
-
 	// Appel Ajax de la 1ere grande image
+	jQuery('#diapo').owlCarousel({
+		items:1,
+		autoplay:true,
+		animateOut: 'fadeOut',
+		animateIn: 'fadeIn',
+		navRewind:true,
+		loop:true,
+		autoplayTimeout:2000,
+		smartSpeed:1200,
+		autoplayHoverPause:true,
+		dots:true
+	});
+
+	TweenMax.fromTo(jQuery('header'), .5, {css:{top:'0%'}}, {css:{top:'-90px'}, delay:3}); // Masque le header
+	TweenMax.fromTo(jQuery('footer'), .5, {css:{bottom:'0%'}}, {css:{bottom:'-51px'}, delay:3}); // Masque le footer
+	TweenMax.to(jQuery('#diapo'), .8, {css:{autoAlpha:1, display:'block'}}); // Apparition du diapo
 }
 
 function setCookie(key, value) {

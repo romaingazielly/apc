@@ -26,6 +26,7 @@
 	</article>
 	<!-- /article -->
 
+
 <?php else: ?>
 
 	<!-- article -->

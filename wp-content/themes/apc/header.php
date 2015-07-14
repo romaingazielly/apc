@@ -45,6 +45,26 @@
 				<img src="<?php echo get_template_directory_uri(); ?>/img/bg-intro.png" id="intro" alt="Intro">
 			</div>
 		</section>
+		<!-- /intro -->
+
+		<!-- diapo -->
+		<?php query_posts('post_type=project'); ?>
+		<section id="diapo">
+			<?php if (have_posts()): while (have_posts()) : the_post(); ?><!-- 
+			--><div class="diapo">
+					<!-- post thumbnail -->
+					<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists 
+						$urlThumb = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
+
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+							<img src="<?php echo $urlThumb; ?>" longdesc="URL_2" alt="Text_2" />
+						</a>
+					<?php endif; ?>
+					<!-- /post thumbnail -->
+				</div><!--
+		--><?php endwhile; endif;?>
+		</section>
+		<!-- /diapo -->
 
 		<!-- wrapper -->
 		<div class="wrapper">
