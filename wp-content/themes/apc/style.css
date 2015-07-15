@@ -148,8 +148,8 @@ input:focus {
 /*------------------------------------*\
     INTRO
 \*------------------------------------*/
-.prehome{position:fixed; top:0; bottom:0; left:0; right:0; background:#545456; z-index:999; font:25px "LeagueGothic-Regular", "Arial";}
-#anim-container{position:relative; overflow:hidden; text-align:right; background:#fafafa; padding-top:50px; padding-bottom:150px; text-transform:uppercase;}
+.prehome{position:fixed; display:none; top:0; bottom:0; left:0; right:0; background:#545456; z-index:999; font:25px "LeagueGothic-Regular", "Arial";}
+#anim-container{position:relative; overflow:hidden; text-align:right; background:#fafafa; padding-top:50px; padding-bottom:150px; text-transform:uppercase; opacity:0; visibility:hidden;}
 #anim-container.clickable{cursor:pointer;}
 #firstline{position:relative; height:10px; margin-bottom:3px; left:-100%;}
 #secline{position:relative; background:#ce302d; padding:25px 10% 25px 0; margin-bottom:3px; left:100%;}
@@ -179,8 +179,8 @@ header .logo{position:absolute; top:4px; right:20px;}
 /*------------------------------------*\
     FOOTER
 \*------------------------------------*/
-footer{position:fixed; bottom:0; z-index:300; width:calc(100% - 40px); border-top:solid 2px #1d1d1d; margin:20px 20px 0 20px; background:#fafafa;}
-footer nav{padding-bottom:13px;}
+footer{position:fixed; bottom:0; z-index:300; width:100%; border-top:solid 2px #1d1d1d; margin:20px 20px 0 0px; background:#fafafa;}
+footer nav{padding-bottom:13px; width:calc(100% - 40px); margin:0 0 0 20px;}
 footer nav > ul > li {position:relative; display:inline-block; vertical-align:middle; width:16.6666667%}
 footer nav > ul > li:hover:before{content:""; position:absolute; display:block; top:0; width:60%; height:6px; background:#ca2026;}
 footer nav > ul > li a{display:block; padding:12px 0 0 0; text-transform:uppercase; font:20px "LeagueGothic-Regular"; color:#696969; width:100%;}

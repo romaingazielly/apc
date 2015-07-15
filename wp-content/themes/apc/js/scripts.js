@@ -7,9 +7,9 @@
 		// DOM ready, take it away
 
 		if(getCookie('prehome') != 'false'){
-
+			jQuery('.prehome').show();
 			centerIntro();
-			animateIntro();
+			setTimeout(function(){ animateIntro(); }, 500);
 
 			jQuery(window).resize(function(event) {
 				centerIntro();
@@ -91,6 +91,7 @@ function centerIntro(){
 function animateIntro() {
 	var tl = new TimelineLite({onComplete:linkIt});
 
+	tl.to(jQuery('#anim-container'), .8, {css:{autoAlpha:1}}); // Fade blanc
 	tl.to(jQuery('#firstline'), .8, {css:{left:'0'}}); // Ligne grise
 	tl.to(jQuery('#secline'), .8, {css:{left:'0'}}, "-=.8"); // Ligne rouge
 	tl.to(jQuery('#thirdline'), .8, {css:{left:'0'}}, "-=.8"); // Ligne grise
