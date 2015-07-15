@@ -5,6 +5,7 @@
 		'use strict';
 		
 		// DOM ready, take it away
+		logoSize();
 
 		if(getCookie('prehome') != 'false'){
 			jQuery('.prehome').show();
@@ -51,6 +52,8 @@
 		jQuery(window).resize(function(event){
 			var imgH = jQuery('.photos').height();
 			jQuery('.infos').height(imgH);
+
+			logoSize();
 		})
 
 		
@@ -126,6 +129,15 @@ function linkIt(){
 			popAnim();
 		});
 	});
+}
+
+function logoSize(){
+	var w = jQuery('.mini, .infos').width();
+	var h = jQuery('.logo-img').height();
+
+	jQuery('.logo a').height(h);
+	console.log(w);
+	jQuery('.logo a').width(w);
 }
 
 function playDiapo(){
