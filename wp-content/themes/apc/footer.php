@@ -4,7 +4,8 @@
 				<!-- nav -->
 					<nav class="nav" role="navigation">
 						<ul>
-							<li><a href="#">L'agence</a></li><!-- 
+							<li><a href="#">L'agence</a></li><!--  
+						 --><li><a href="#">Actualites</a></li><!-- 
 						 --><li>
 								<a href="#">Realisations</a>
 								<ul>
@@ -13,8 +14,7 @@
 									<li><a href="#">Municipalite</a></li>
 									<li><a href="#">Concours</a></li>
 								</ul>
-							</li><!-- 
-						 --><li><a href="#">Actualites</a></li><!-- 
+							</li><!--
 						 --><li><a href="#">Enseignement</a></li><!-- 
 						 --><li><a href="#">Carnet d'adresses</a></li><!-- 
 						 --><li><a href="#">Contact</a></li>

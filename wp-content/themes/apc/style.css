@@ -206,7 +206,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 /*------------------------------------*\
     PAGES
 \*------------------------------------*/
-.projet{width:100%; padding:0 20px; /* 937 ÷ 1160 */ margin-bottom:61px;}
+.projet{width:100%; padding:0 20px; /* 937 ÷ 1160 */ margin-bottom:61px; opacity:0; visibility:hidden;}
 .photos{display:inline-block; width:80.775862%; vertical-align:top;}
 .photos img{width:auto; max-width:100%}
 .owl-controls{position:absolute; bottom:20px; width:100%; text-align:center; z-index:5;}

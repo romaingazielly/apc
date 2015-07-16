@@ -21,6 +21,8 @@
 			popAnim();
 		}
 
+		TweenMax.to(jQuery('.projet'), .9, {css:{autoAlpha:1}, delay:.2}); // Fade Projet
+
 		// Carousel
 		jQuery('.photos').on('initialized.owl.carousel', function(){
 			// Vars
@@ -94,18 +96,16 @@ function centerIntro(){
 function animateIntro() {
 	var tl = new TimelineLite({onComplete:linkIt});
 
-	tl.to(jQuery('#anim-container'), .8, {css:{autoAlpha:1}}); // Fade blanc
-	tl.to(jQuery('#firstline'), .8, {css:{left:'0'}}); // Ligne grise
-	tl.to(jQuery('#secline'), .8, {css:{left:'0'}}, "-=.8"); // Ligne rouge
-	tl.to(jQuery('#thirdline'), .8, {css:{left:'0'}}, "-=.8"); // Ligne grise
-	tl.to(jQuery('#fourthline'), .8, {css:{left:'0'}}, "-=.8"); // Ligne grise
-	tl.to(jQuery('#lastline'), .8, {css:{left:'0'}}, "-=.8"); // Ligne rouge
+	tl.to(jQuery('#anim-container'), .9, {css:{autoAlpha:1}}); // Fade blanc
+	tl.to(jQuery('#firstline'), .9, {css:{left:'0'}}); // Ligne grise
+	tl.to(jQuery('#secline'), .9, {css:{left:'0'}}, "-=.9"); // Ligne rouge
+	tl.to(jQuery('#thirdline'), .9, {css:{left:'0'}}, "-=.9"); // Ligne grise
+	tl.to(jQuery('#lastline'), .9, {css:{left:'0'}}, "-=.9"); // Ligne rouge
 
-	tl.to(jQuery('#secline img'), .4, {css:{autoAlpha:1}}); // Logo APC
-	tl.to(jQuery('#sentence'), .4, {css:{autoAlpha:1}}); // Phrases
-	tl.to(jQuery('#fourthline span'), .4, {css:{autoAlpha:1}}); // 2e Phrases
-	tl.to(jQuery('#chinois'), .4, {css:{autoAlpha:1}});
-	tl.to(jQuery('#acces'), .4, {css:{autoAlpha:1}});
+	tl.to(jQuery('#secline img'), .6, {css:{autoAlpha:1}}); // Logo APC
+	tl.to(jQuery('#sentence'), .6, {css:{autoAlpha:1}}); // Phrases
+	tl.to(jQuery('#chinois'), .6, {css:{autoAlpha:1}});
+	tl.to(jQuery('#acces'), .6, {css:{autoAlpha:1}});
 }
 
 function popAnim(){
@@ -141,6 +141,8 @@ function logoSize(){
 }
 
 function playDiapo(){
+	var t = null;
+
 	// Appel Ajax de la 1ere grande image
 	jQuery('#diapo').owlCarousel({
 		items:1,
@@ -155,9 +157,32 @@ function playDiapo(){
 		dots:true
 	});
 
-	TweenMax.fromTo(jQuery('header'), .5, {css:{top:'0%'}}, {css:{top:'-90px'}, delay:3}); // Masque le header
-	TweenMax.fromTo(jQuery('footer'), .5, {css:{bottom:'0%'}}, {css:{bottom:'-51px'}, delay:3}); // Masque le footer
+	var tl = new TimelineLite({onComplete:mouseCanMove});
+	tl.to(jQuery('header'), .5, {css:{top:'-90px'}}, 3); // Masque le header
+	tl.to(jQuery('footer'), .5, {css:{bottom:'-51px'}}, "-=.5"); // Masque le footer
 	TweenMax.to(jQuery('#diapo'), .8, {css:{autoAlpha:1, display:'block'}}); // Apparition du diapo
+	
+	function mouseCanMove(){
+		// Si l'utilisateur bouge sa souris
+		jQuery('body').on('mousemove', function() {
+			if(t !== null){
+				showBars();
+				clearTimeout(t);
+			}
+			t = setTimeout(function(){ hideBars() }, 3000);
+		});
+	}
+
+	function hideBars(){
+		TweenMax.to(jQuery('header'), .5, {css:{top:'-90px'}}); // Masque le header
+		TweenMax.to(jQuery('footer'), .5, {css:{bottom:'-51px'}}); // Masque le footer
+	}
+
+	function showBars(){
+		TweenMax.to(jQuery('header'), .5, {css:{top:'0'}}); // Masque le header
+		TweenMax.to(jQuery('footer'), .5, {css:{bottom:'0'}}); // Masque le footer
+	}
+
 }
 
 function setCookie(key, value) {

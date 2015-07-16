@@ -37,9 +37,6 @@
 					<span class="red" id="acces">Accès au site</span>
 					<span id="sentence">Architecture - Programmation - Conseil</span>
 				</div>
-				<div id="fourthline">
-					<span>Atelier - Perspective - Couleur</span>
-				</div>
 				<div id="lastline"></div>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/chinois.png" id="chinois" alt="Chinois">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/bg-intro.png" id="intro" alt="Intro">
