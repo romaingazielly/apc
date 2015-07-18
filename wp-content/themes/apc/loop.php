@@ -1,5 +1,4 @@
-<?php query_posts('post_type=project'); ?> <!-- https://codex.wordpress.org/Class_Reference/WP_Query#Parameters -->
-
+<?php query_posts('post_type=project' . '&posts_per_page=20'); $a = 0; ?> <!-- https://codex.wordpress.org/Class_Reference/WP_Query#Parameters -->
 
 
 	<!-- Appel des champs ACF -->
@@ -7,9 +6,10 @@
 
 	<!-- article -->
 	<article class="list">
-
+	<div class="line-container">
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?><!-- 
 		--><div class="mini">
+				<?php $a++ ?>
 				<!-- post thumbnail -->
 				<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists 
 					$url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
@@ -20,9 +20,9 @@
 					</a>
 				<?php endif; ?>
 				<!-- /post thumbnail -->
-			</div><!--
+			</div><?php if ($a % 5 == 0 && $a != 20): ?></div><div class="line-container"><?php endif; ?><!--
 	--><?php endwhile; ?>
-
+	
 	</article>
 	<!-- /article -->
 

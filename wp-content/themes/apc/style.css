@@ -228,18 +228,25 @@ footer nav ul li ul li a:hover{color:#ca2026;}
     PROJECT LIST
 \*------------------------------------*/
 .list{margin:20px 20px 0 0; }
-.mini{position:relative; width:18.305085%; /* 216 ÷ 1080 */ display:inline-block; margin:0 0 1.6949153% 1.6949153%; opacity:0; transition:opacity .3s ease-in; z-index:3;}
-.mini.visible{opacity:1;}
+.list h2{margin:0 0 0 20px; font-size:34px;}
+.line-container{opacity:0; transition:opacity .3s ease-in;}
+.line-container:last-child{margin:0 0 40px 0;}
+.line-container.visible{opacity:1;}
+.mini{position:relative; width:18.305085%; /* 216 ÷ 1080 */ display:inline-block; margin:0 0 1.6949153% 1.6949153%; z-index:3;}
 .mini a{display:block; margin:0;}
 .mini img{width:100%; height:100%; max-width:none}
 .mini .bigger{cursor:pointer; position:absolute; z-index:2; transition:all .3s ease-in-out; transform-origin:0 0;}
 .mini.giant{z-index:4;}
-/*.mini:hover img.bigger{width:calc(200% + 20px); height:calc(200% + 20px); }*/
-.mini:hover img.bigger{transform:scaleX(2.098) scaleY(2.138)}
-.mini:nth-child(5n):hover img.bigger{transform-origin:right bottom;}
-.mini:nth-child(5):hover img.bigger{transform-origin:right top;}
-.mini:nth-last-child(-n+5):hover img.bigger{transform-origin:left bottom;}
-.mini:last-child:hover img.bigger{transform-origin:right bottom;}
+/*.mini:hover img.bigger{transform:scaleX(2.098) scaleY(2.138)}
+.mini:nth-child(5n) img.bigger{transform-origin:right bottom;}
+.mini:nth-child(5) img.bigger{transform-origin:right top;}
+.mini:nth-last-child(-n+5) img.bigger{transform-origin:left bottom;}
+.mini:last-child img.bigger{transform-origin:right bottom;}*/
+.line-container .mini:hover img.bigger{transform:scaleX(2.098) scaleY(2.138)}
+.line-container .mini:last-child img.bigger{transform-origin:right top;}
+.line-container:last-child .mini img.bigger{transform-origin:right bottom;}
+.line-container:last-child .mini:first-child img.bigger{transform-origin:left bottom;}
+.line-container:last-child .mini:nth-child(5) img.bigger{transform-origin:right bottom;}
 
 /*------------------------------------*\
     DIAPO

@@ -111,11 +111,11 @@ function animateIntro() {
 function popAnim(){
 
 	// Lance l'appartition des petites vignettes de la home
-	jQuery('.mini').each(function(index, el) {
+	jQuery('.line-container').each(function(index, el) {
 		var elem = jQuery(this);
 		setTimeout(function(){
 			elem.addClass('visible');
-		}, index*150);
+		}, index*350);
 	});
 }
 
@@ -136,14 +136,17 @@ function logoSize(){
 	var h = jQuery('.logo-img').height();
 
 	jQuery('.logo a').height(h);
-	console.log(w);
 	jQuery('.logo a').width(w);
 }
 
 function playDiapo(){
 	var t = null;
 
-	// Appel Ajax de la 1ere grande image
+	// Réadapation de l'écran pour ne pas avoir de scroll
+	var wh = jQuery(window).height();
+	jQuery('.wrapper').height(wh).css({'overflow': 'hidden'});
+
+	// Appel de la 1ere grande image
 	jQuery('#diapo').owlCarousel({
 		items:1,
 		autoplay:true,
