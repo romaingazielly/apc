@@ -1,5 +1,4 @@
-<?php query_posts('post_type=project' . '&posts_per_page=20'); $a = 0; ?> <!-- https://codex.wordpress.org/Class_Reference/WP_Query#Parameters -->
-
+<?php query_posts('post_type=project' . '&posts_per_page=-1'); $a = 0; $nbProj = $wp_query->post_count; ?> <!-- https://codex.wordpress.org/Class_Reference/WP_Query#Parameters -->
 
 	<!-- Appel des champs ACF -->
 	<?php //echo get_post_meta($post->ID, 'url_video', true); ?>
@@ -20,9 +19,9 @@
 					</a>
 				<?php endif; ?>
 				<!-- /post thumbnail -->
-			</div><?php if ($a % 5 == 0 && $a != 20): ?></div><div class="line-container"><?php endif; ?><!--
-	--><?php endwhile; ?>
-	
+			</div><?php if ($a % 5 == 0 && $a != $nbProj): ($a % 5 == 0 && $a == $nbProj) ?></div><div class="line-container"><?php endif; ?><!--
+	--><?php endwhile; wp_reset_postdata(); ?>
+
 	</article>
 	<!-- /article -->
 

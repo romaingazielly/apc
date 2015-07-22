@@ -7,6 +7,10 @@
 		// DOM ready, take it away
 		logoSize();
 
+		if( jQuery('body').hasClass('home') ){
+			infiniteScroll();
+		}
+
 		if(getCookie('prehome') != 'false'){
 			jQuery('.prehome').show();
 			centerIntro();
@@ -197,4 +201,40 @@ function setCookie(key, value) {
 function getCookie(key) {
     var keyValue = document.cookie.match('(^|;) ?' + key + '=([^;]*)(;|$)');
     return keyValue ? keyValue[2] : null;
+}
+
+
+function infiniteScroll(){
+	var offset = 20;
+
+	jQuery(window).data('ajaxready', true);
+	
+	// ici on ajoute un petit loader gif qui fera patienter pendant le chargement
+	jQuery('.container').append('<div id="loader"><img src="wp-content/themes/apc/img/ajax-loader.gif" alt="loader ajax"></div>');
+
+	var deviceAgent = navigator.userAgent.toLowerCase();
+	var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
+
+	// on déclence une fonction lorsque l'utilisateur utilise sa molette 
+	jQuery(window).scroll(function() {
+
+		if (jQuery(window).data('ajaxready') == false) return;
+
+		if((jQuery(window).scrollTop() + jQuery(window).height()) == jQuery(document).height() || agentID && (jQuery(window).scrollTop() + jQuery(window).height()) + 150 > jQuery(document).height()) {
+			jQuery('.container #loader').fadeIn(400);
+			jQuery.get('/more/' + offset + '/', function(data){
+
+				if (data != '') {
+				  jQuery('.container #loader').before(data);
+
+				  jQuery('.container .hidden').fadeIn(400);
+
+				  offset+= 20;
+				  jQuery(window).data('ajaxready', true);
+				}
+				jQuery('.container #loader').fadeOut(400);
+						
+			});
+		}
+	});	
 }
