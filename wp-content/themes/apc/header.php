@@ -35,7 +35,10 @@
 				</div>
 				<div id="thirdline" class="grey">
 					<span class="red" id="acces">Accès au site</span>
-					<span id="sentence">Architecture - Programmation - Conseil</span>
+					<span id="sentence">Atelier Patrick Corda</span>
+				</div>
+				<div id="fourthline">
+					<span>Architecture - Programmation - Conseil</span>
 				</div>
 				<div id="lastline"></div>
 				<img src="<?php echo get_template_directory_uri(); ?>/img/chinois.png" id="chinois" alt="Chinois">

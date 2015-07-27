@@ -104,10 +104,12 @@ function animateIntro() {
 	tl.to(jQuery('#firstline'), .9, {css:{left:'0'}}); // Ligne grise
 	tl.to(jQuery('#secline'), .9, {css:{left:'0'}}, "-=.9"); // Ligne rouge
 	tl.to(jQuery('#thirdline'), .9, {css:{left:'0'}}, "-=.9"); // Ligne grise
+	tl.to(jQuery('#fourthline'), .8, {css:{left:'0'}}, "-=.8"); // Ligne grise
 	tl.to(jQuery('#lastline'), .9, {css:{left:'0'}}, "-=.9"); // Ligne rouge
 
 	tl.to(jQuery('#secline img'), .6, {css:{autoAlpha:1}}); // Logo APC
 	tl.to(jQuery('#sentence'), .6, {css:{autoAlpha:1}}); // Phrases
+	tl.to(jQuery('#fourthline span'), .4, {css:{autoAlpha:1}}); // 2e Phrases
 	tl.to(jQuery('#chinois'), .6, {css:{autoAlpha:1}});
 	tl.to(jQuery('#acces'), .6, {css:{autoAlpha:1}});
 }

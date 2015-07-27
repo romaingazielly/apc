@@ -203,6 +203,10 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 	position:relative;
 }
 
+#post-404{margin:20px 0 20px 20px;}
+#post-404 h1{font-size:32px;}
+#post-404 h2{font-size:22px;}
+
 /*------------------------------------*\
     PAGES
 \*------------------------------------*/
@@ -254,7 +258,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
     DIAPO
 \*------------------------------------*/
 #diapo{position:fixed; display:none; top:0; left:0; opacity:0; z-index: 100;}
-#diapo:after{content:"© Atelier Patrick Corda - architecture programmation conseil"; position:fixed; bottom:20px; left:20px; color:#fff; font:11px "Lato-Regular"; text-transform:uppercase; pointer-events:none;}
+#diapo:after{content:"© Atelier Patrick Corda - architecture programmation conseil"; position:fixed; bottom:20px; left:20px; color:#fff; font:11px "Lato-Regular"; text-transform:uppercase; pointer-events:none; text-shadow: 1px 1px rgb(79, 73, 73);}
 
 /*------------------------------------*\
     RESPONSIVE
