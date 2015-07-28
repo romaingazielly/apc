@@ -173,7 +173,8 @@ input:focus {
 \*------------------------------------*/
 header{position:relative; display:block; height:90px; background:#fff; border-bottom:solid 1px #f2f2f2; z-index:300;}
 header .diapo{height:55px; width:90%; margin:10px 0 0 20px; border-top:solid 2px #d7d7d7; border-bottom:solid 2px #d7d7d7;}
-header #player{position:relative; display:block; margin:3px 0; width:45px; height:45px; background:url('img/play.png');}
+header #player{position:relative; display:block; margin:3px 0; width:45px; height:45px; background:url('img/play.jpg') no-repeat center bottom;}
+header #player.played{background-position:center top;}
 header .logo{position:absolute; top:4px; right:20px;}
 header .logo a{display:block; text-align:right; background:url('img/bg-logo.png') center repeat-x; height:81px;}
 

@@ -1,3 +1,4 @@
+var t;
 (function ($, root, undefined) {
 	
 	$(function () {
@@ -83,7 +84,14 @@
 		// Diaporama
 		jQuery('#player').on('click', function(event) {
 			event.preventDefault();
-			playDiapo();
+			var $this = $(this);
+
+			if($this.hasClass('played'))
+				playDiapo(true);
+			else
+				playDiapo(false);
+
+			$this.toggleClass('played');
 		});
 	});
 	
@@ -115,7 +123,6 @@ function animateIntro() {
 }
 
 function popAnim(){
-
 	// Lance l'appartition des petites vignettes de la home
 	jQuery('.line-container').each(function(index, el) {
 		var elem = jQuery(this);
@@ -145,41 +152,65 @@ function logoSize(){
 	jQuery('.logo a').width(w);
 }
 
-function playDiapo(){
-	var t = null;
+function playDiapo(e){
+	// Le diapo se lance
+	if(e){
+		t = null;
 
-	// Réadapation de l'écran pour ne pas avoir de scroll
-	var wh = jQuery(window).height();
-	jQuery('.wrapper').height(wh).css({'overflow': 'hidden'});
+		// Réadapation de l'écran pour ne pas avoir de scroll
+		var wh = jQuery(window).height();
+		jQuery('.wrapper').height(wh).css({'overflow': 'hidden'}); // Désactive le scroll pendant le diapo
 
-	// Appel de la 1ere grande image
-	jQuery('#diapo').owlCarousel({
-		items:1,
-		autoplay:true,
-		animateOut: 'fadeOut',
-		animateIn: 'fadeIn',
-		navRewind:true,
-		loop:true,
-		autoplayTimeout:2000,
-		smartSpeed:1200,
-		autoplayHoverPause:true,
-		dots:true
-	});
+		// Appel de la 1ere grande image
+		jQuery('#diapo').owlCarousel({
+			items:1,
+			autoplay:true,
+			animateOut: 'fadeOut',
+			animateIn: 'fadeIn',
+			navRewind:true,
+			loop:true,
+			autoplayTimeout:2000,
+			smartSpeed:1200,
+			autoplayHoverPause:true,
+			dots:true
+		});
 
-	var tl = new TimelineLite({onComplete:mouseCanMove});
-	tl.to(jQuery('header'), .5, {css:{top:'-90px'}}, 3); // Masque le header
-	tl.to(jQuery('footer'), .5, {css:{bottom:'-51px'}}, "-=.5"); // Masque le footer
-	TweenMax.to(jQuery('#diapo'), .8, {css:{autoAlpha:1, display:'block'}}); // Apparition du diapo
+		var tl = new TimelineLite({onComplete:mouseCanMove(true)});
+		tl.to(jQuery('header'), .5, {css:{top:'-90px'}}, 3); // Masque le header
+		tl.to(jQuery('footer'), .5, {css:{bottom:'-51px'}}, "-=.5"); // Masque le footer
+		TweenMax.to(jQuery('#diapo'), .8, {css:{autoAlpha:1, display:'block'}}); // Apparition du diapo
+
+	// Le diapo s'arrête
+	}else{
+		jQuery('.wrapper').css({'overflow': 'visible'}); // Réactive le scroll
+		
+		TweenMax.to(jQuery('#diapo'), .8, {css:{autoAlpha:0, display:'none'}, onComplete:function(){ // Disparition du diapo
+			//jQuery('#diapo').trigger('stop.owl.autoplay'); // stop le carousel (n'a pas l'air de fonctionner)
+		}});
+
+		mouseCanMove(false);
+	}
 	
-	function mouseCanMove(){
+	
+	function mouseCanMove(e){
 		// Si l'utilisateur bouge sa souris
-		jQuery('body').on('mousemove', function() {
+		if(e){
+			jQuery('body').on('mousemove', timer);
+		}else{
+			jQuery('body').off('mousemove');
+			timer(false);
+		}
+
+		function timer(e){
 			if(t !== null){
 				showBars();
-				clearTimeout(t);
+				window.clearTimeout(t);
 			}
-			t = setTimeout(function(){ hideBars() }, 3000);
-		});
+
+			if(e !== false){
+				t = window.setTimeout(function(){ hideBars() }, 3000);
+			}
+		}
 	}
 
 	function hideBars(){
@@ -188,11 +219,12 @@ function playDiapo(){
 	}
 
 	function showBars(){
-		TweenMax.to(jQuery('header'), .5, {css:{top:'0'}}); // Masque le header
-		TweenMax.to(jQuery('footer'), .5, {css:{bottom:'0'}}); // Masque le footer
+		TweenMax.to(jQuery('header'), .5, {css:{top:'0'}}); // Affiche le header
+		TweenMax.to(jQuery('footer'), .5, {css:{bottom:'0'}}); // Affiche le footer
 	}
 
 }
+
 
 function setCookie(key, value) {
     var expires = new Date();

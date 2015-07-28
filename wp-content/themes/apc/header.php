@@ -73,7 +73,7 @@
 			<header class="header clear" role="banner">
 
 					<aside class="diapo">
-						<a href="javascript:;" id="player"></a>
+						<a href="javascript:;" id="player" class="played"></a>
 					</aside>
 
 					<!-- logo -->

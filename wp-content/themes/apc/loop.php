@@ -1,4 +1,4 @@
-<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; $a = 0; $nbProj = $wp_query->post_count;
+<?php $paged = get_query_var('paged') ? get_query_var('paged') : 1; $a = 0; $nbProj = $wp_query->post_count;
 query_posts('post_type=project' . '&posts_per_page=' . get_option('posts_per_page') . '&paged='.$paged); ?> <!-- https://codex.wordpress.org/Class_Reference/WP_Query#Parameters -->
 
 	<!-- Appel des champs ACF -->
