@@ -176,7 +176,8 @@ header .diapo{height:55px; width:90%; margin:10px 0 0 20px; border-top:solid 2px
 header #player{position:relative; display:block; margin:3px 0; width:45px; height:45px; background:url('img/play.jpg') no-repeat center bottom;}
 header #player.played{background-position:center top;}
 header .logo{position:absolute; top:4px; right:20px;}
-header .logo a{display:block; text-align:right; background:url('img/bg-logo.png') center repeat-x; height:81px;}
+header .logo a{display:block; text-align:right; background:url('img/bg-logo.png') center repeat-x; height:81px; transition:all .35s ease-in;}
+header .logo a img{height:100%;}
 
 /*------------------------------------*\
     FOOTER
@@ -184,7 +185,7 @@ header .logo a{display:block; text-align:right; background:url('img/bg-logo.png'
 footer{position:fixed; bottom:0; z-index:300; width:100%; border-top:solid 2px #1d1d1d; margin:20px 20px 0 0px; background:#fafafa;}
 footer nav{padding-bottom:13px; width:calc(100% - 40px); margin:0 0 0 20px;}
 footer nav > ul > li {position:relative; display:inline-block; vertical-align:middle; width:16.6666667%}
-footer nav > ul > li:hover:before{content:""; position:absolute; display:block; top:0; width:60%; height:6px; background:#ca2026;}
+footer nav > ul > li:hover:before, footer nav > ul > li.active:before{content:""; position:absolute; display:block; top:0; width:60%; height:6px; background:#ca2026;}
 footer nav > ul > li a{display:block; padding:12px 0 0 0; text-transform:uppercase; font:20px "LeagueGothic-Regular"; color:#696969; width:100%;}
 footer nav ul li ul{display:none;position:absolute; width:100%; bottom:100%; background:#fafafa; background:rgba(255,255,255,.9); border-left:solid 1px #ca2026; padding:12px 0 0 0; z-index:999;}
 footer nav ul li:hover ul{display:block; z-index:999; border-bottom:solid 2px #111;}
@@ -209,16 +210,16 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 #post-404 h2{font-size:22px;}
 
 /*------------------------------------*\
-    PAGES
+    PROJECT DETAIL
 \*------------------------------------*/
-.projet{width:100%; padding:0 20px; /* 937 ÷ 1160 */ margin-bottom:61px; opacity:0; visibility:hidden;}
-.photos{display:inline-block; width:80.775862%; vertical-align:top;}
+.projet{width:100%; padding:0 20px; margin-bottom:61px; opacity:0; visibility:hidden; transition:all .35s ease-in;}
+.photos{display:inline-block; width:80.775862%; /* 937 ÷ 1160 */ vertical-align:top;}
 .photos img{width:auto; max-width:100%}
 .owl-controls{position:absolute; bottom:20px; width:100%; text-align:center; z-index:5;}
 .owl-dot{display:inline-block; width:10px; height:10px; background:#ca2026; border:solid 1px #ca2026; margin-right:10px;}
 .owl-dot.active{background:#fafafa;}
 .owl-dot:last-child{margin-right:0;}
-.infos{position:relative; display:inline-block; background:#828282; vertical-align:top; width:18.965517%; /* 220 ÷ 1160 */ margin-left:0.25862069%; /* 3 ÷ 1160 */ overflow:hidden;}
+.infos{position:relative; display:inline-block; background:#828282; vertical-align:top; height:100%; width:18.965517%; /* 220 ÷ 1160 */ margin-left:0.25862069%; /* 3 ÷ 1160 */ overflow:hidden;}
 .infos div{background:#828282; padding:0px 10px;}
 .infos div h1{font:20px "LeagueGothic-Regular"; color:#fafafa; text-transform:uppercase;}
 .infos div h2{font:18px "LeagueGothic-Italic"; color:#fafafa;}
@@ -255,12 +256,29 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .container .hidden{display:none;}
 .container #loader{display:none; width:64px; margin:auto;}
 
+
+.line-container > article{display:none !important;}
+#next{display:none;}
 /*------------------------------------*\
     DIAPO
 \*------------------------------------*/
 #diapo{position:fixed; display:none; top:0; left:0; opacity:0; z-index: 100;}
 #diapo:after{content:"© Atelier Patrick Corda - architecture programmation conseil"; position:fixed; bottom:20px; left:20px; color:#fff; font:11px "Lato-Regular"; text-transform:uppercase; pointer-events:none; text-shadow: 1px 1px rgb(79, 73, 73);}
 
+/*------------------------------------*\
+    CONTACT
+\*------------------------------------*/
+.contact-container{height: 600px; width: 100%; padding: 0 20px; margin-bottom: 54px; opacity: 0; visibility: hidden; transition: all .35s ease-in;}
+.contact-container .contact-map{height:100%; width:80.775862%; /* 937 ÷ 1160 */ display:inline-block; vertical-align:top;}
+.contact-container aside{position:relative; display:inline-block; background:#828282; vertical-align:top; height:100%; width:18.965517%; /* 220 ÷ 1160 */ margin-left:0.25862069%; /* 3 ÷ 1160 */ overflow:hidden; }
+.contact-container aside div{padding:20px 10px 0;}
+.contact-container aside h1{font:24px "LeagueGothic-Regular"; color:#fafafa; text-transform:uppercase; padding:0 0 5px 0; border-bottom:solid 1px #fff; margin:0 0 10px 0;}
+.contact-container aside h2{font:18px "LeagueGothic-Regular"; color:#fafafa; text-transform:uppercase; }
+.contact-container aside h2:after{display:block; content:""; width:20px; height:1px; background:#fff; margin:10px 0;}
+.contact-container aside h2:last-child:after{display:none;}
+.contact-container aside h2 span{display:block; margin:0 0 10px;}
+.contact-container aside h2 strong{font:13px/15px Arial; display:block; text-transform:none; font-weight:normal;}
+.contact-container aside h2 a{color:#fff;}
 /*------------------------------------*\
     RESPONSIVE
 \*------------------------------------*/

@@ -8,7 +8,7 @@ var t;
 		// DOM ready, take it away
 		logoSize();
 
-		if( jQuery('body').hasClass('home') ){
+		if( $('body').hasClass('home') ){
 			infiniteScroll();
 		}
 
@@ -17,33 +17,34 @@ var t;
 			centerIntro();
 			setTimeout(function(){ animateIntro(); }, 500);
 
-			jQuery(window).resize(function(event) {
+			$(window).resize(function(event) {
 				centerIntro();
 			});
 		}
 		else{
-			jQuery('.prehome').hide();
+			$('.prehome').hide();
 			popAnim();
 		}
 
-		TweenMax.to(jQuery('.projet'), .9, {css:{autoAlpha:1}, delay:.2}); // Fade Projet
+		TweenMax.to($('.projet, .contact-container'), .9, {css:{autoAlpha:1}, delay:.2}); // Fade Projet
 
 		// Carousel
-		jQuery('.photos').on('initialized.owl.carousel', function(){
+		$('.photos').on('initialized.owl.carousel', function(){
 			// Vars
-			var imgH = jQuery('.photos').height();
-			var h1H = jQuery('.infos h1').height();
-			setTimeout(function() { var h2H = jQuery('.infos h2').height(); jQuery('.infos p').height(imgH-(69 + h1H + h2H)); console.log(h2H)}, 500);
-			//
+			sameSize();
+			// var imgH = $('.photos').height();
+			// var h1H = $('.infos h1').height();
+			// setTimeout(function() { var h2H = $('.infos h2').height(); $('.infos p').height(imgH-(69 + h1H + h2H)); console.log(h2H)}, 500);
+			// //
 
-			// Adaptation du bloc info par rapport à la taille de l'image
-			jQuery('.infos').height(imgH);
+			// // Adaptation du bloc info par rapport à la taille de l'image
+			// $('.infos').height(imgH);
 
 			// Adaptation de la hauteur du contenu
-			// jQuery('.infos p').height(imgH-(69 + h1H + h2H));
+			// $('.infos p').height(imgH-(69 + h1H + h2H));
 		});
 
-		jQuery('.photos').owlCarousel({
+		$('.photos').owlCarousel({
 			items:1,
 			autoplay:true,
 			animateOut: 'fadeOut',
@@ -56,25 +57,25 @@ var t;
 			dots:true
 		});
 
-		jQuery(window).resize(function(event){
-			var imgH = jQuery('.photos').height();
-			jQuery('.infos').height(imgH);
-
-			logoSize();
+		$(window).resize(function(event){
+			delay(function(){
+		    	sameSize();
+				logoSize();
+		    }, 500);
 		})
 
 		
 		// Effet hover home
-		jQuery('.mini').hover(function() {
-			jQuery('.mini').removeClass('giant');
-			jQuery(this).addClass('giant');
+		$('.mini').hover(function() {
+			$('.mini').removeClass('giant');
+			$(this).addClass('giant');
 		}, function() {
 			setTimeout(function(){
-				jQuery(this).removeClass('giant');
+				$(this).removeClass('giant');
 			},200)
 		});
 
-		jQuery('.bigger').on('click', function(e) {
+		$('.bigger').on('click', function(e) {
 			e.preventDefault();
 			var lien = jQuery(this).siblings('a').attr('href');
 			document.location.href = lien;
@@ -96,6 +97,15 @@ var t;
 	});
 	
 })(jQuery, this);
+
+// Pour un resize propre
+var delay = (function(){
+  var timer = 0;
+  return function(callback, ms){
+    clearTimeout (timer);
+    timer = setTimeout(callback, ms);
+  };
+})();
 
 function centerIntro(){
 	var wH = jQuery(window).height();
@@ -144,8 +154,14 @@ function linkIt(){
 	});
 }
 
+function sameSize(){
+	var imgH = jQuery('.photos').height();
+	jQuery('.projet').height(imgH);
+
+}
+
 function logoSize(){
-	var w = jQuery('.mini, .infos').width();
+	var w = jQuery('.mini, .infos, .map-infos').width(); // .infos -> Page projets, .mini -> home
 	var h = jQuery('.logo-img').height();
 
 	jQuery('.logo a').height(h);
@@ -191,7 +207,7 @@ function playDiapo(e){
 		mouseCanMove(false);
 	}
 	
-	
+
 	function mouseCanMove(e){
 		// Si l'utilisateur bouge sa souris
 		if(e){
@@ -204,11 +220,11 @@ function playDiapo(e){
 		function timer(e){
 			if(t !== null){
 				showBars();
-				window.clearTimeout(t);
+				clearTimeout(t);
 			}
 
 			if(e !== false){
-				t = window.setTimeout(function(){ hideBars() }, 3000);
+				t = setTimeout(function(){ hideBars() }, 3000);
 			}
 		}
 	}
@@ -256,7 +272,7 @@ function infiniteScroll(){
 
 		if((jQuery(window).scrollTop() + jQuery(window).height()) == jQuery(document).height() || agentID && (jQuery(window).scrollTop() + jQuery(window).height()) + 150 > jQuery(document).height()) {
 			jQuery('.container #loader').fadeIn(400);
-			jQuery.get('/more/' + offset + '/', function(data){
+			jQuery.get('/?page=' + 2 + '/', function(data){
 
 				if (data != '') {
 				  jQuery('.container #loader').before(data);
