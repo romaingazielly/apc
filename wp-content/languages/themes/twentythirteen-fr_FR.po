@@ -2,13 +2,17 @@
 # This file is distributed under the same license as the Twenty Thirteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-06-28 13:27:59+0000\n"
+"PO-Revision-Date: 2015-07-27 08:39:05+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
 "X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Twenty Thirteen\n"
+
+#. Author URI of the plugin/theme
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
 
 #. Author of the plugin/theme
 msgid "the WordPress team"
@@ -19,8 +23,8 @@ msgid "The 2013 theme for WordPress takes us back to the blog, featuring a full 
 msgstr "Le thème de WordPress pour 2013 nous ramène au blog, avec un grand nombre de formats d'article, chacun s'affichant à sa propre manière, en toute beauté. Vous y trouverez de nombreux détails de mise en page, à commencer par le jeu de couleurs vives et les images d'en-tête assorties, une superbe typographie et de belles icônes, et une mise en page flexible qui fonctionne sur toutes les tailles d'écrans, grands ou petits."
 
 #. Theme URI of the plugin/theme
-msgid "http://wordpress.org/themes/twentythirteen"
-msgstr "http://wordpress.org/themes/twentythirteen"
+msgid "https://wordpress.org/themes/twentythirteen/"
+msgstr "https://wordpress.org/themes/twentythirteen/"
 
 #. Theme Name of the plugin/theme
 msgid "Twenty Thirteen"
@@ -180,8 +184,6 @@ msgstr "Fièrement propulsé par %s"
 msgid "Semantic Personal Publishing Platform"
 msgstr "Plate-forme de publication personnelle à la pointe de la sémantique"
 
-#. #-#-#-#-#  twentythirteen.pot (Twenty Thirteen 1.4)  #-#-#-#-#
-#. Author URI of the plugin/theme
 #: footer.php:19
 msgid "http://wordpress.org/"
 msgstr "http://wordpress.org/"

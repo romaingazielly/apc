@@ -62,6 +62,11 @@ var t;
 		    	sameSize();
 				logoSize();
 		    }, 500);
+
+		    // if(jQuery('body').hasClass('contact')){
+		    // 	var contactH = window.innerHeight();
+		    // 	jQuery('.contact-container').height(contactH);
+		    // }
 		})
 
 		
@@ -157,7 +162,6 @@ function linkIt(){
 function sameSize(){
 	var imgH = jQuery('.photos').height();
 	jQuery('.projet').height(imgH);
-
 }
 
 function logoSize(){
@@ -255,36 +259,47 @@ function getCookie(key) {
 
 
 function infiniteScroll(){
-	var offset = 20;
-
 	jQuery(window).data('ajaxready', true);
+	var page = 1;
+	var isScrolling = false;
 	
-	// ici on ajoute un petit loader gif qui fera patienter pendant le chargement
+	// Ajout du loader
 	jQuery('.container').append('<div id="loader"><img src="wp-content/themes/apc/img/ajax-loader.gif" alt="loader ajax"></div>');
 
 	var deviceAgent = navigator.userAgent.toLowerCase();
 	var agentID = deviceAgent.match(/(iphone|ipod|ipad)/);
 
-	// on déclence une fonction lorsque l'utilisateur utilise sa molette 
+	// Au scroll
 	jQuery(window).scroll(function() {
+		if(!isScrolling){
 
-		if (jQuery(window).data('ajaxready') == false) return;
+			if (jQuery(window).data('ajaxready') == false) return;
 
-		if((jQuery(window).scrollTop() + jQuery(window).height()) == jQuery(document).height() || agentID && (jQuery(window).scrollTop() + jQuery(window).height()) + 150 > jQuery(document).height()) {
-			jQuery('.container #loader').fadeIn(400);
-			jQuery.get('/?page=' + 2 + '/', function(data){
+			if((jQuery(window).scrollTop() + jQuery(window).height()) == jQuery(document).height() || agentID && (jQuery(window).scrollTop() + jQuery(window).height()) + 150 > jQuery(document).height()) {
+				isScrolling = true;
+				page += 1;
 
-				if (data != '') {
-				  jQuery('.container #loader').before(data);
+				jQuery('.container #loader').fadeIn(400);
 
-				  jQuery('.container .hidden').fadeIn(400);
+				jQuery.get('/?page=' + page + '/', function(data){
 
-				  offset+= 20;
-				  jQuery(window).data('ajaxready', true);
-				}
-				jQuery('.container #loader').fadeOut(400);
-						
-			});
+					var projects = jQuery(data).find('.line-container');
+
+					// if (jQuery('.line-container').is(':empty')){
+
+					// 	alert(projects)
+					// 	return;
+					// }
+
+					if (data != '') {
+					  jQuery('.list').append(projects);
+					  popAnim();
+
+					  jQuery(window).data('ajaxready', true);
+					}
+					jQuery('.container #loader').fadeOut(400);
+				});
+			}
 		}
-	});	
+	});
 }
