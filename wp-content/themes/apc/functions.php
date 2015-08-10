@@ -423,6 +423,7 @@ function create_post_type_html5()
 // Ajoute un Custom type dans WP
 add_action('init', function () {
     wp_enqueue_script('jquery');
+
     register_post_type('project', array(
         'labels' => array(
             'name' => 'Projets',
@@ -434,6 +435,20 @@ add_action('init', function () {
         'public' => true,
         'has_archive' => true,
         'rewrite' => array('slug' => 'projets'),
+        'supports' => array('thumbnail', 'title', 'content'),
+    ));
+
+    register_post_type('membres', array(
+        'labels' => array(
+            'name' => 'Membres',
+            'singular_name' => 'Membres',
+            'new_item' => 'Nouveau membre',
+            'add_new_item' => 'Ajouter un membre',
+            'edit_item' => 'Modifier le membre',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'hierarchical' => true,
         'supports' => array('thumbnail', 'title', 'content'),
     ));
 });

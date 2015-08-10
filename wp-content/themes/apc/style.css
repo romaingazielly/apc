@@ -268,17 +268,26 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 /*------------------------------------*\
     CONTACT
 \*------------------------------------*/
-.contact-container{height: 600px; width: 100%; padding: 0 20px; margin-bottom: 54px; opacity: 0; visibility: hidden; transition: all .35s ease-in;}
-.contact-container .contact-map{height:100%; width:80.775862%; /* 937 ÷ 1160 */ display:inline-block; vertical-align:top;}
-.contact-container aside{position:relative; display:inline-block; background:#828282; vertical-align:top; height:100%; width:18.965517%; /* 220 ÷ 1160 */ margin-left:0.25862069%; /* 3 ÷ 1160 */ overflow:hidden; }
-.contact-container aside div{padding:20px 10px 0;}
-.contact-container aside h1{font:24px "LeagueGothic-Regular"; color:#fafafa; text-transform:uppercase; padding:0 0 5px 0; border-bottom:solid 1px #fff; margin:0 0 10px 0;}
-.contact-container aside h2{font:18px "LeagueGothic-Regular"; color:#fafafa; text-transform:uppercase; }
-.contact-container aside h2:after{display:block; content:""; width:20px; height:1px; background:#fff; margin:10px 0;}
-.contact-container aside h2:last-child:after{display:none;}
-.contact-container aside h2 span{display:block; margin:0 0 10px;}
-.contact-container aside h2 strong{font:13px/15px Arial; display:block; text-transform:none; font-weight:normal;}
-.contact-container aside h2 a{color:#fff;}
+.page-format{height: 600px; width: 100%; padding: 0 20px; margin-bottom: 54px; opacity: 0; visibility: hidden; transition: all .35s ease-in;}
+.page-format .contact-map, .page-format .team-container{height:100%; width:80.775862%; /* 937 ÷ 1160 */ display:inline-block; vertical-align:top;}
+.page-format aside{position:relative; display:inline-block; background:#828282; vertical-align:top; height:100%; width:18.965517%; /* 220 ÷ 1160 */ margin-left:0.25862069%; /* 3 ÷ 1160 */ overflow:hidden; }
+.page-format aside div{padding:20px 10px 0;}
+.page-format aside h1{font:24px "LeagueGothic-Regular"; color:#fafafa; text-transform:uppercase; padding:0 0 5px 0; border-bottom:solid 1px #fff; margin:0 0 10px 0;}
+.page-format aside h2{font:18px "LeagueGothic-Regular"; color:#fafafa; text-transform:uppercase; }
+.page-format aside h2:after{display:block; content:""; width:20px; height:1px; background:#fff; margin:10px 0;}
+.page-format aside h2:last-child:after{display:none;}
+.page-format aside h2 span{display:block; margin:0 0 10px;}
+.page-format aside h2 strong{font:13px/15px Arial; display:block; text-transform:none; font-weight:normal;}
+.page-format aside h2 a{color:#fff;}
+.page-format aside p{font:13px/15px Arial; color:#fff;}
+.page-format .team-m{position:relative; display: inline-block; vertical-align: top; margin:0 1.6949153% 1.6949153% 0; width:23.376623%; /* 216 ÷ 924 */ cursor:pointer;}
+.page-format .team-m:hover figcaption{opacity:1;}
+.page-format .team-m:nth-child(4n){margin-right:0;}
+.page-format .team-m img{width:100%;}
+.page-format .team-m figcaption{position:absolute; opacity:0; top:0; left:0; right:0; bottom:0; padding:20px; background:rgba(202,32,38,.8); color:#fff; transition:all .3s ease-out;}
+.page-format .team-m figcaption h2{padding:0 0 10px 0; margin:0 0 20px 0; border-bottom:solid 1px #fff; font-size:20px; text-transform:uppercase; letter-spacing: 1px;}
+.page-format .team-m figcaption p{font:13px/15px Arial;}
+
 /*------------------------------------*\
     RESPONSIVE
 \*------------------------------------*/

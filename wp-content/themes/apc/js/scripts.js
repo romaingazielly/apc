@@ -26,7 +26,7 @@ var t;
 			popAnim();
 		}
 
-		TweenMax.to($('.projet, .contact-container'), .9, {css:{autoAlpha:1}, delay:.2}); // Fade Projet
+		TweenMax.to($('.projet, .page-format'), .9, {css:{autoAlpha:1}, delay:.2}); // Fade Projet
 
 		// Carousel
 		$('.photos').on('initialized.owl.carousel', function(){
