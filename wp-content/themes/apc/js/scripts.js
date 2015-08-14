@@ -139,7 +139,7 @@ function animateIntro() {
 
 function popAnim(){
 	// Lance l'appartition des petites vignettes de la home
-	jQuery('.line-container').each(function(index, el) {
+	jQuery('.line-container').not('.visible').each(function(index, el) {
 		var elem = jQuery(this);
 		setTimeout(function(){
 			elem.addClass('visible');
