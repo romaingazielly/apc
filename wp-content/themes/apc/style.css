@@ -220,10 +220,10 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .owl-dot.active{background:#fafafa;}
 .owl-dot:last-child{margin-right:0;}
 .infos{position:relative; display:inline-block; background:#828282; vertical-align:top; height:100%; width:18.965517%; /* 220 ÷ 1160 */ margin-left:0.25862069%; /* 3 ÷ 1160 */ overflow:hidden;}
-.infos div{background:#828282; padding:0px 10px;}
+.infos div{background:#828282; padding:0px 10px; font:13px/16px "Arial"; color:#fafafa;}
 .infos div h1{font:20px "LeagueGothic-Regular"; color:#fafafa; text-transform:uppercase;}
 .infos div h2{font:18px "LeagueGothic-Italic"; color:#fafafa;}
-.infos div p{font:13px/16px "Arial"; color:#fafafa; text-align:justify; overflow:auto;}
+.infos div p{text-align:justify; overflow:auto;}
 .infos .medias:before{content:""; display:block; position:absolute; top:-3px; width:100%; height:3px; background:#fafafa;}
 .infos .medias{position:absolute; width:100%; bottom:0; background:#1d1d1d url('img/splitter.png') no-repeat center; height:69px;}
 .infos .medias li{position:relative; display:inline-block; width:50%; height:69px;}
@@ -263,6 +263,8 @@ footer nav ul li ul li a:hover{color:#ca2026;}
     DIAPO
 \*------------------------------------*/
 #diapo{position:fixed; display:none; top:0; left:0; opacity:0; z-index: 100;}
+#diapo:before{content:""; display:block; width:123px; height:125px; position:absolute; background:url('img/logo-diapo.jpg') no-repeat center; right:20px; top:20px; z-index:2; opacity:0; transition:opacity .5s ease-out;}
+#diapo.playing:before{opacity: 1;}
 #diapo:after{content:"© Atelier Patrick Corda - architecture programmation conseil"; position:fixed; bottom:20px; left:20px; color:#fff; font:11px "Lato-Regular"; text-transform:uppercase; pointer-events:none; text-shadow: 1px 1px rgb(79, 73, 73);}
 
 /*------------------------------------*\

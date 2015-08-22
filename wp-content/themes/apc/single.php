@@ -15,9 +15,8 @@
 			</section><!-- 
 		 --><aside class="infos">
 				<div>
-					<h1>Centre culturel</h1>
-					<h2>Equipements - 2012</h2>
-					<p>Aenean id elementum sapien. Integer sagittis augue felis, at pharetra neque vehicula ut. Aliquam iaculis risus venenatt. Aliquam iaculis risus venenatt. Aliquam iaculis risus venenatt. Aliquam iaculis risus venenatis volutpat interdum. Quisque in nibh id ex efficitur congue nec eu purus. Vestibulum a euismod nisi. Phasellus ornare congue quam, sed placerat dui. Aenean interdum, quam at vulputate efficitur, ligula eros egestas lectus, quis fermentum erat quam nec odio. Vestibulum tellus quam, hendrerit at congue eget, consequat nec felis. Curabitur bibendum consectetur fermentum. dui. Aenean interdum, quam at vulputate efficitur, ligula eros egestas lectus, quis fermentum erat quam nec odio. Vestibulum tellus quam, hendrerit at congue eget, consequat nec felis. Curabitur bibendum consectetur fermentum</p>
+					<!-- Appel des champs ACF -->
+					<?php echo get_post_meta($post->ID, 'description', true); ?>	
 				</div>
 				<ul class="medias">
 					<li>

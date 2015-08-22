@@ -4,7 +4,12 @@
 				<!-- nav -->
 					<nav class="nav" role="navigation">
 						<ul>
-							<li><a href="#">L'agence</a></li><!--  
+							<li>
+								<a href="#">L'agence</a>
+								<ul>
+									<li><a href="<?php bloginfo('url') ?>/equipe/">L'équipe</a></li>
+								</ul>
+							</li><!--  
 						 --><li><a href="#">Actualites</a></li><!-- 
 						 --><li>
 								<a href="#">Realisations</a>

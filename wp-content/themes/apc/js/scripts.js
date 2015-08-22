@@ -199,6 +199,7 @@ function playDiapo(e){
 		tl.to(jQuery('header'), .5, {css:{top:'-90px'}}, 3); // Masque le header
 		tl.to(jQuery('footer'), .5, {css:{bottom:'-51px'}}, "-=.5"); // Masque le footer
 		TweenMax.to(jQuery('#diapo'), .8, {css:{autoAlpha:1, display:'block'}}); // Apparition du diapo
+		
 
 	// Le diapo s'arrête
 	}else{
@@ -236,11 +237,13 @@ function playDiapo(e){
 	function hideBars(){
 		TweenMax.to(jQuery('header'), .5, {css:{top:'-90px'}}); // Masque le header
 		TweenMax.to(jQuery('footer'), .5, {css:{bottom:'-51px'}}); // Masque le footer
+		jQuery('#diapo').addClass('playing'); // Affiche le logo en faut à droite du diapo
 	}
 
 	function showBars(){
 		TweenMax.to(jQuery('header'), .5, {css:{top:'0'}}); // Affiche le header
 		TweenMax.to(jQuery('footer'), .5, {css:{bottom:'0'}}); // Affiche le footer
+		jQuery('#diapo').removeClass('playing'); // Cache le logo en faut à droite du diapo
 	}
 
 }
