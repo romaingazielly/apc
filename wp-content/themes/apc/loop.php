@@ -6,9 +6,6 @@ $a = 0;
 $nbProj = $wp_query->post_count;
 query_posts('post_type=project&paged='.$paged); ?> <!-- https://codex.wordpress.org/Class_Reference/WP_Query#Parameters -->
 
-	<!-- Appel des champs ACF -->
-	<?php //echo get_post_meta($post->ID, 'url_video', true); ?>
-
 	<!-- article -->
 	<article class="list">
 	<div class="line-container">
@@ -26,11 +23,10 @@ query_posts('post_type=project&paged='.$paged); ?> <!-- https://codex.wordpress.
 				<?php endif; ?>
 				<!-- /post thumbnail -->
 			</div><?php if ($a % 5 == 0 && $a != $nbProj): ($a % 5 == 0 && $a == $nbProj) ?></div><div class="line-container"><?php endif; ?><!--
-	--><?php endwhile; wp_reset_postdata(); ?>
+	--><?php endwhile; ?>
 
 	</article>
 	<!-- /article -->
-
 
 <?php else: ?>
 
