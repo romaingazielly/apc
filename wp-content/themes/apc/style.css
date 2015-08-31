@@ -242,7 +242,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .mini a{display:block; margin:0;}
 .mini img{width:100%; height:100%; max-width:none}
 .mini .bigger{cursor:pointer; position:absolute; z-index:2; transition:all .3s ease-in-out; transform-origin:0 0;}
-.mini.giant{z-index:4;}
+.mini.giant, .mini:hover{z-index:4;}
 /*.mini:hover img.bigger{transform:scaleX(2.098) scaleY(2.138)}
 .mini:nth-child(5n) img.bigger{transform-origin:right bottom;}
 .mini:nth-child(5) img.bigger{transform-origin:right top;}
@@ -289,6 +289,19 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .page-format .team-m figcaption{position:absolute; opacity:0; top:0; left:0; right:0; bottom:0; padding:20px; background:rgba(202,32,38,.8); color:#fff; transition:all .3s ease-out;}
 .page-format .team-m figcaption h2{padding:0 0 10px 0; margin:0 0 20px 0; border-bottom:solid 1px #fff; font-size:20px; text-transform:uppercase; letter-spacing: 1px;}
 .page-format .team-m figcaption p{font:13px/15px Arial;}
+
+/*------------------------------------*\
+    ACTUALITES
+\*------------------------------------*/
+.actus{background:#fafafa; margin:20px auto;}
+.actus article{width:92.5%; /* 1110 ÷ 1200 */ margin:0 auto 40px;}
+.actus article:first-child{padding-top:40px;}
+.actus article:last-child{margin-bottom:90px;}
+.actus article figure img{display: inline-block; vertical-align: top; width:14.414414%; /* 160 ÷ 1110 */ max-width: 160px;}
+.actus article figure figcaption{display: inline-block; vertical-align: top; width:85.585586%; /* 950 ÷ 1110 */ padding:0 0 0 3.1578947%; /* 30 ÷ 950 */ font-family:"LeagueGothic-Regular"; color:#1d1d1d;}
+.actus article figure figcaption span.date{font-size:14px;}	
+.actus article figure figcaption h1{font-size:24px; font-weight:normal; text-transform: uppercase; border-bottom:solid 1px #1d1d1d; padding-bottom: 3px; margin-bottom:15px;}
+.actus article figure figcaption p{font-size: 13px; font-family: arial; line-height: 16px;}
 
 /*------------------------------------*\
     RESPONSIVE

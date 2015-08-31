@@ -451,6 +451,20 @@ add_action('init', function () {
         'hierarchical' => true,
         'supports' => array('thumbnail', 'title', 'content'),
     ));
+
+    register_post_type('actus', array(
+        'labels' => array(
+            'name' => 'Actualités',
+            'singular_name' => 'actualites',
+            'new_item' => 'Nouvelle actualité',
+            'add_new_item' => 'Ajouter une actualité',
+            'edit_item' => 'Modifier l\'actualité',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'hierarchical' => true,
+        'supports' => array('thumbnail', 'title', 'content'),
+    ));
 });
 
 

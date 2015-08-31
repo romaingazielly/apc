@@ -3,6 +3,7 @@
 $paged = $_GET['page'] ? $_GET['page'] : 1;
 
 $a = 0;
+global $post;
 $nbProj = $wp_query->post_count;
 query_posts('post_type=project&paged='.$paged); ?> <!-- https://codex.wordpress.org/Class_Reference/WP_Query#Parameters -->
 
@@ -36,4 +37,4 @@ query_posts('post_type=project&paged='.$paged); ?> <!-- https://codex.wordpress.
 	</article>
 	<!-- /article -->
 
-<?php endif; ?>
+<?php endif; wp_reset_postdata(); ?>
