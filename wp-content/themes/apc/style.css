@@ -304,6 +304,11 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .actus article figure figcaption p{font-size: 13px; font-family: arial; line-height: 16px;}
 
 /*------------------------------------*\
+    AGENCE
+\*------------------------------------*/
+.agence{display:inline-block; vertical-align: top; background:url('img/agence.jpg') no-repeat center; background-size: cover;}
+
+/*------------------------------------*\
     RESPONSIVE
 \*------------------------------------*/
 
