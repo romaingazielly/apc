@@ -463,7 +463,6 @@ add_action('init', function () {
         'public' => true,
         'has_archive' => true,
         'hierarchical' => true,
-        'supports' => array('thumbnail', 'title', 'content'),
     ));
 });
 

@@ -49,9 +49,9 @@
 		<!-- /intro -->
 
 		<!-- diapo -->
-		<?php query_posts('post_type=project'); ?>
+		<?php $diapo_query = new WP_Query(array('post_type' => 'project')); ?>
 		<section id="diapo">
-			<?php if (have_posts()): while (have_posts()) : the_post(); ?><!-- 
+			<?php if ($diapo_query->have_posts()): while ($diapo_query->have_posts()) : $diapo_query->the_post(); ?><!-- 
 			--><div class="diapo">
 					<!-- post thumbnail -->
 					<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists 

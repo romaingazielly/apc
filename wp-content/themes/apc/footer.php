@@ -11,7 +11,7 @@
 									<li><a href="<?php bloginfo('url') ?>/a-propos/">L'agence</a></li>
 								</ul>
 							</li><!--  
-						 --><li><a href="#">Actualites</a></li><!-- 
+						 --><li><a href="<?php bloginfo('url') ?>/actus">Actualites</a></li><!-- 
 						 --><li>
 								<a href="#">Realisations</a>
 								<ul>

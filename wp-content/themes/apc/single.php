@@ -1,15 +1,22 @@
 <?php $args = $wp_query->post->ID;  ;
-get_header(); ?>
+get_header();
+
+$name = get_queried_object()->post_name;
+query_posts('post_type=project&name='.$name);
+
+the_post();
+
+?>
 
 	<main role="main">
 	<!-- section -->
 	<section>
 
-	<?php if (have_posts()): the_post(); ?>
+	<?php if ($post): ?>
 
 		<!-- article -->
 		<article class="projet" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<h1><?php var_dump($post); ?></h1>
+		<h1><?php //var_dump($post); ?></h1>
 			<section class="photos">
 				<img src="<?php echo $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" id="img" alt="img">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/660.jpg" id="img" alt="img">
