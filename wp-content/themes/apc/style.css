@@ -253,6 +253,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .line-container:last-child .mini img.bigger{transform-origin:right bottom;}
 .line-container:last-child .mini:first-child img.bigger{transform-origin:left bottom;}
 .line-container:last-child .mini:nth-child(5) img.bigger{transform-origin:right bottom;}
+.line-container:first-child:last-child .mini img.bigger{transform-origin:left top;}
 .container .hidden{display:none;}
 .container #loader{display:none; width:64px; margin:auto;}
 
