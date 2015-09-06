@@ -16,10 +16,12 @@ the_post();
 
 		<!-- article -->
 		<article class="projet" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-		<h1><?php //var_dump($post); ?></h1>
 			<section class="photos">
-				<img src="<?php echo $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" id="img" alt="img">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/660.jpg" id="img" alt="img">
+				<?php $rows = get_field('project_images'); if (count($rows) > 0) { ?>
+					<?php foreach($rows as $row) {?>
+						<img src="<?php echo $row['image']; ?>" alt="<?php the_title() ?>">
+					<?php } ?>
+				<?php } ?>
 			</section><!-- 
 		 --><aside class="infos">
 				<div>
