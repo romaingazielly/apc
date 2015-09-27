@@ -12,7 +12,7 @@
 		<section class="team-container">
 		<?php if (have_posts()): while (have_posts()) : the_post(); ?> 
 			<figure class="team-m">
-				<img src="<?php echo get_template_directory_uri(); ?>/img/equipe.jpg">
+				<img src="<?php echo $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" alt="Membre de l'équipe">
 				<figcaption>
 					<h2><?php echo get_the_title() ?></h2>
 					<p><?php echo get_post_meta($post->ID, 'description_membre', true) ?></p>
