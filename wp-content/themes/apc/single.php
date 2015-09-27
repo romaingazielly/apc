@@ -26,6 +26,7 @@ the_post();
 		 --><aside class="infos">
 				<div>
 					<!-- Appel des champs ACF -->
+					<h1><?php echo get_the_title($post->ID) ?></h1>
 					<?php echo get_post_meta($post->ID, 'description', true); ?>
 				</div>
 				<ul class="medias">
