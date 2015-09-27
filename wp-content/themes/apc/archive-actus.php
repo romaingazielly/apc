@@ -15,7 +15,7 @@
 		<?php while (have_posts()) { the_post(); ?>
 		<article>
 			<figure>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/actu.jpg" alt="Actualité"><!-- 
+				<img src="<?php $actu_image = get_field('actu_image'); echo $actu_image['url'] ?>" alt="Actualité"><!--
 			 --><figcaption>
 					<span class="date"><?php echo get_the_date('d.m.Y') ?></span>
 					<h1><?php echo get_the_title(); ?></h1>
