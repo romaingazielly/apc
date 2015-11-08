@@ -225,10 +225,18 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .infos div h2{font:18px "LeagueGothic-Italic"; color:#fafafa;}
 .infos div p{text-align:justify; overflow:auto;}
 .infos .medias:before{content:""; display:block; position:absolute; top:-3px; width:100%; height:3px; background:#fafafa;}
-.infos .medias{position:absolute; width:100%; bottom:0; background:#1d1d1d url('img/splitter.png') no-repeat center; height:69px;}
+.infos .medias{position:absolute; z-index:4; width:100%; bottom:0; background:#1d1d1d url('img/splitter.png') no-repeat center; height:69px;}
 .infos .medias li{position:relative; display:inline-block; width:50%; height:69px;}
 .infos .medias li #informations{display:block; width:100%; height:69px; background:url('img/infos.png') no-repeat center;}
 .infos .medias li #video{display:block; width:100%; height:69px; background:url('img/video.png') no-repeat center;}
+.infos .medias li #video.novid{background: url('img/video-no.png') no-repeat center; cursor:default;}
+.infos .infos-hidden{display:none; position:absolute; top:0; bottom:0; left:0; right:0; z-index:3;}
+.infos .infos-hidden.visible{display:block;}
+.infos .infos-hidden table{text-align: left;}
+.video-y{position: fixed; display:none; z-index:10; top:0; left:20px; right:20px; bottom:0; background:rgba(0,0,0,.8);}
+.video-y.visible {display:block;}
+.video-y .vid{position:absolute; top:50%; left:50%; margin:-240px 0 0 -320px;}
+.video-y .vid .close-vid{position:absolute;right:-45px; top:0;display:block;width:45px;height:45px; background:url('img/play.jpg') no-repeat center bottom;}
 
 /*------------------------------------*\
     PROJECT LIST

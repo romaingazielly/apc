@@ -69,6 +69,30 @@ var t;
 		    // }
 		})
 
+		// Clic sur i
+		$('#informations').on('click', function(event) {
+			event.preventDefault();
+			$('.infos-hidden').toggleClass('visible');
+			
+		});
+		//Clic sur Video
+		var youtubeURL = '';
+		$('#video').on('click', function(event) {
+			event.preventDefault();
+			if( $('#vid-ytb').attr('src') != ''){
+				youtubeURL = $('#vid-ytb').attr('src');
+			}
+			else{
+				$('#vid-ytb').attr('src', youtubeURL);
+			}
+			$('.video-y').fadeIn('slow');
+		});
+		$('a.close-vid').on('click', function(event) {
+			event.preventDefault();
+			$('#vid-ytb').attr('src', '');
+			$('.video-y').fadeOut('slow');
+		});
+
 		
 		// Effet hover home
 		$('.mini').hover(function() {
@@ -192,7 +216,7 @@ function playDiapo(e){
 			autoplayTimeout:2000,
 			smartSpeed:1200,
 			autoplayHoverPause:true,
-			dots:true
+			dots:false
 		});
 
 		var tl = new TimelineLite({onComplete:mouseCanMove(true)});

@@ -42,7 +42,7 @@
 					<span>Architecture - Programmation - Conseil</span>
 				</div>
 				<div id="lastline"></div>
-				<img src="<?php echo get_template_directory_uri(); ?>/img/chinois.png" id="chinois" alt="Chinois">
+				<img src="<?php echo get_template_directory_uri(); ?>/img/5sens.svg" id="chinois" alt="5 sens" width="350">
 				<img src="<?php echo get_template_directory_uri(); ?>/img/bg-intro.png" id="intro" alt="Intro">
 			</div>
 		</section>

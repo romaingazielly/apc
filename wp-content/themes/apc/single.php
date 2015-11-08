@@ -6,6 +6,7 @@ query_posts('post_type=project&name='.$name);
 
 the_post();
 
+$urlVideo = get_post_meta($post->ID, 'url_video', true);
 ?>
 
 	<main role="main">
@@ -34,11 +35,44 @@ the_post();
 						<a id="informations" href="javascript:;"></a>
 					</li><!-- 
 				 --><li>
-						<a id="video" href="javascript:;"></a>
+						<a id="video" <?php if($urlVideo == '') { ?>class="novid"<?php } ?>href="javascript:;"></a>
 					</li>
 				</ul>
+				<div class="infos-hidden">
+					<table cellpadding="0" cellspacing="0" border="0">
+						<tr>
+							<th>Maître d'ouvrage</th>
+							<td>Michel</td>
+						</tr>
+						<tr>
+							<th>Maître d'oeuvre</th>
+							<td>Jena)patruck</td>
+						</tr>
+						<tr>
+							<th>S.H.O.N</th>
+							<td>324546</td>
+						</tr>
+						<tr>
+							<th>Coût d'objectif</th>
+							<td>34556546546 5654€</td>
+						</tr>
+						<tr>
+							<th>Date de livraison</th>
+							<td>04/42/2222</td>
+						</tr>
+					</table>
+				</div>
 			</aside>
-
+			<?php 
+				if($urlVideo != '') { ?>
+					<div class="video-y ">
+						<!-- Appel des champs ACF -->
+						<div class="vid">
+							<a class="close-vid" href="javascript:;"></a>
+							<iframe id="vid-ytb" width="640" height="480" src="<?php echo $urlVideo ?>" frameborder="0" allowfullscreen></iframe>
+						</div>
+					</div>
+				<?php } ?>
 		</article>
 		<!-- /article -->
 
