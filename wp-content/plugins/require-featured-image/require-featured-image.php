@@ -4,7 +4,7 @@ Plugin Name: Require Featured Image
 Plugin URI: http://pressupinc.com/wordpress-plugins/require-featured-image/
 Description: Like it says on the tin: requires posts to have a featured image set before they'll be published.
 Author: Press Up
-Version: 1.1.1
+Version: 1.1.3
 Author URI: http://pressupinc.com
 Text Domain: require-featured-image
 */ 
@@ -15,7 +15,7 @@ add_action( 'transition_post_status', 'rfi_guard', 10, 3 );
 function rfi_guard( $new_status, $old_status, $post ) {
     if ( $new_status === 'publish' 
         && !rfi_should_let_post_publish( $post ) ) {
-        wp_die( __( 'Vous ne pouvez pas publier un projet sans image à la une.', 'require-featured-image' ) );
+        wp_die( __( 'You cannot publish without a featured image.', 'require-featured-image' ) );
     }
 }
 
@@ -47,7 +47,7 @@ function rfi_enqueue_edit_screen_js( $hook ) {
             'rfi-admin-js',
             'objectL10n',
             array(
-                'jsWarningHtml' => __( '<strong>Vous devez définir une image à la une avant de publier ce projet.</strong>', 'require-featured-image' ),
+                'jsWarningHtml' => __( '<strong>This entry has no featured image.</strong> Please set one. You need to set a featured image before publishing.', 'require-featured-image' ),
             )
         );
     }
