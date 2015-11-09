@@ -25,8 +25,8 @@
 									<li><a href="#">Divers (autres)</a></li>
 								</ul>
 							</li><!--
-						 --><li><a href="#">Enseignement</a></li><!-- 
-						 --><li><a href="#">Carnet d'adresses</a></li><!-- 
+						 --><li><a href="<?php bloginfo('url') ?>/enseignement/">Enseignement</a></li><!-- 
+						 --><!-- <li><a href="#">Carnet d'adresses</a></li> --><!-- 
 						 --><li <?php if (is_page('contact')): ?>class="active"<?php endif; ?>><a href="<?php bloginfo('url') ?>/contact/">Contact</a></li>
 						</ul>
 					</nav>
