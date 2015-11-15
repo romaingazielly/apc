@@ -2,7 +2,7 @@
 
 	<main role="main">
 	<!-- section -->
-	<section class="contact-container page-format">
+	<section class="contact-container page-format sizer">
 		<section class="contact-map" id="contact-map">
 				<!-- Google Map -->
 				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2626.2012416030684!2d2.3982585!3d48.8353!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67267f86e4ae1%3A0xefd72ec67da2ccb6!2s60+Rue+de+Wattignies%2C+75012+Paris!5e0!3m2!1sfr!2sfr!4v1438521279935" width="100%" height="100%" frameborder="0" style="border:0" allowfullscreen></iframe>

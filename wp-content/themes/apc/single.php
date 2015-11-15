@@ -29,7 +29,44 @@ $urlVideo = get_post_meta($post->ID, 'url_video', true);
 				<div>
 					<!-- Appel des champs ACF -->
 					<h1><?php echo get_the_title($post->ID) ?></h1>
-					<?php echo get_post_meta($post->ID, 'description', true); ?>
+					<h2><?php echo get_post_meta($post->ID, 'date_et_lieu', true) ?></h2>
+					<div class="txt">
+						<?php echo get_post_meta($post->ID, 'description', true); ?>
+						<div class="infos-hidden">
+							<table cellpadding="0" cellspacing="0" border="0">
+								<tr>
+									<td><strong>Maître d'ouvrage</strong>
+										<?php echo get_post_meta($post->ID, 'maitre_ouvrage', true) ?>
+									</td>
+								</tr>
+								<tr>
+									<td><strong>Architecte</strong>
+										<?php echo get_post_meta($post->ID, 'architecte', true) ?>
+									</td>
+								</tr>
+								<tr>
+									<td><strong>Type de mission</strong>
+										<?php echo get_post_meta($post->ID, 'type_de_mission', true) ?>
+									</td>
+								</tr>
+								<tr>
+									<td><strong>S.H.O.N</strong>
+										<?php echo get_post_meta($post->ID, 'shon', true) ?>
+									</td>
+								</tr>
+								<tr>
+									<td><strong>Coût d'objectif</strong>
+										<?php echo get_post_meta($post->ID, 'cout_objectif', true) ?>
+									</td>
+								</tr>
+								<tr>
+									<td><strong>Date de livraison</strong>
+										<?php echo get_post_meta($post->ID, 'date_de_livraison', true) ?>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
 				</div>
 				<ul class="medias">
 					<li>
@@ -39,30 +76,6 @@ $urlVideo = get_post_meta($post->ID, 'url_video', true);
 						<a id="video" <?php if($urlVideo == '') { ?>class="novid"<?php } ?>href="javascript:;"></a>
 					</li>
 				</ul>
-				<div class="infos-hidden">
-					<table cellpadding="0" cellspacing="0" border="0">
-						<tr>
-							<th>Maître d'ouvrage</th>
-							<td>Michel</td>
-						</tr>
-						<tr>
-							<th>Maître d'oeuvre</th>
-							<td>Jena)patruck</td>
-						</tr>
-						<tr>
-							<th>S.H.O.N</th>
-							<td>324546</td>
-						</tr>
-						<tr>
-							<th>Coût d'objectif</th>
-							<td>34556546546 5654€</td>
-						</tr>
-						<tr>
-							<th>Date de livraison</th>
-							<td>04/42/2222</td>
-						</tr>
-					</table>
-				</div>
 			</aside>
 			<?php 
 				if($urlVideo != '') { ?>

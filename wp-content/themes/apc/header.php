@@ -57,8 +57,8 @@
 					<?php if ( has_post_thumbnail()) : // Check if Thumbnail exists 
 						$urlThumb = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>
 
-						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-							<img src="<?php echo $urlThumb; ?>" longdesc="URL_2" alt="Text_2" />
+						<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>" style="background:url(<?php echo $urlThumb; ?>) no-repeat center; background-size:cover;">
+							<!-- <img src="<?php //echo $urlThumb; ?>" longdesc="URL_2" alt="Text_2" /> -->
 						</a>
 					<?php endif; ?>
 					<!-- /post thumbnail -->

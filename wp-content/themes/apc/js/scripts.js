@@ -58,6 +58,11 @@ var t;
 			dots:true
 		});
 
+		if($('body').hasClass('contact') || $('body').hasClass('enseignement') || $('body').hasClass('a-propos')){
+			resizeWindow();
+			sameSize();
+		}
+
 		$(window).resize(function(event){
 			resizeWindow();
 			delay(function(){
@@ -77,7 +82,7 @@ var t;
 		$('#informations').on('click', function(event) {
 			event.preventDefault();
 			$('.infos-hidden').toggleClass('visible');
-			
+			$(this).toggleClass('on');
 		});
 		//Clic sur Video
 		var youtubeURL = '';
@@ -238,6 +243,7 @@ function playDiapo(e){
 		tl.to(jQuery('header'), .5, {css:{top:'-90px'}}, 3); // Masque le header
 		tl.to(jQuery('footer'), .5, {css:{bottom:'-51px'}}, "-=.5"); // Masque le footer
 		TweenMax.to(jQuery('#diapo'), .8, {css:{autoAlpha:1, display:'block'}}); // Apparition du diapo
+		setTimeout(function(){ jQuery('#diapo').toggleClass('playing'); }, 3500);// Logo APC présent pendant le diapo 
 		
 
 	// Le diapo s'arrête
@@ -274,6 +280,7 @@ function playDiapo(e){
 	}
 
 	function hideBars(){
+		console.log("toto")
 		TweenMax.to(jQuery('header'), .5, {css:{top:'-90px'}}); // Masque le header
 		TweenMax.to(jQuery('footer'), .5, {css:{bottom:'-51px'}}); // Masque le footer
 		jQuery('#diapo').addClass('playing'); // Affiche le logo en faut à droite du diapo

@@ -9,7 +9,7 @@
 	?>
 	<main role="main">
 	<!-- section -->
-	<section class="contact-container page-format">
+	<section class="contact-container page-format sizer">
 		<section class="agence contact-map">
 		</section><!-- 
 	 --><aside class="map-infos">
