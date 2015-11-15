@@ -167,6 +167,7 @@ input:focus {
 #intro{position:absolute; top:0; right:0;}
 .grey{background:#333;}
 .red{color:#ce302d;}
+.sizer{transition:height .3s ease-out;}
 
 /*------------------------------------*\
     HEADER
@@ -193,6 +194,8 @@ footer nav ul li ul li{display:block;}
 footer nav ul li ul li a{font:18px "LeagueGothic-Regular"; color:#111111; padding:0 0 12px 11px;}
 footer nav ul li ul li a:hover{color:#ca2026;}
 
+.home footer nav > ul > li:nth-child(3):before{content:""; position:absolute; display:block; top:0; width:60%; height:6px; background:#ca2026;}
+.home footer nav > ul > li:nth-child(3) > a{color:#ca2026;}
 /*------------------------------------*\
     STRUCTURE
 \*------------------------------------*/
@@ -214,7 +217,8 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 \*------------------------------------*/
 .projet{width:100%; padding:0 20px; margin-bottom:61px; opacity:0; visibility:hidden; transition:all .35s ease-in;}
 .photos{display:inline-block; width:80.775862%; /* 937 ÷ 1160 */ vertical-align:top;}
-.photos img{width:auto; max-width:100%}
+.photos.owl-carousel .owl-stage-outer, .photos.owl-carousel .owl-stage-outer .owl-stage, .photos.owl-carousel .owl-stage-outer .owl-stage .owl-item {height:100%;}
+.photos .pic{width:100%; height:100%;}
 .owl-controls{position:absolute; bottom:20px; width:100%; text-align:center; z-index:5;}
 .owl-dot{display:inline-block; width:10px; height:10px; background:#ca2026; border:solid 1px #ca2026; margin-right:10px;}
 .owl-dot.active{background:#fafafa;}

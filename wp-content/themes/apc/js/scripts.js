@@ -31,6 +31,7 @@ var t;
 		// Carousel
 		$('.photos').on('initialized.owl.carousel', function(){
 			// Vars
+			resizeWindow();
 			sameSize();
 			// var imgH = $('.photos').height();
 			// var h1H = $('.infos h1').height();
@@ -58,10 +59,13 @@ var t;
 		});
 
 		$(window).resize(function(event){
+			resizeWindow();
 			delay(function(){
 		    	sameSize();
 				logoSize();
 		    }, 500);
+
+
 
 		    // if(jQuery('body').hasClass('contact')){
 		    // 	var contactH = window.innerHeight();
@@ -135,6 +139,17 @@ var delay = (function(){
     timer = setTimeout(callback, ms);
   };
 })();
+
+function resizeWindow() {
+	if (document.all) {
+		h=document.body.clientHeight;
+		w=document.body.clientWidth;
+	} else {
+		w=window.innerWidth;
+		h=window.innerHeight;
+	}
+	jQuery('.sizer').height(h-90-72);
+}
 
 function centerIntro(){
 	var wH = jQuery(window).height();

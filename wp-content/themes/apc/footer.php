@@ -13,7 +13,7 @@
 							</li><!--  
 						 --><li><a href="<?php bloginfo('url') ?>/actus">Actualites</a></li><!-- 
 						 --><li>
-								<a href="#">Realisations</a>
+								<a href="/">Realisations</a>
 								<ul>
 									<li><a href="#">Internationnal</a></li>
 									<li><a href="#">Équipements</a></li>
