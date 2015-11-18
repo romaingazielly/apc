@@ -187,6 +187,7 @@ footer{position:fixed; bottom:0; z-index:300; width:100%; border-top:solid 2px #
 footer nav{padding-bottom:13px; width:calc(100% - 40px); margin:0 0 0 20px;}
 footer nav > ul > li {position:relative; display:inline-block; vertical-align:middle; width:20%;}
 footer nav > ul > li:hover:before, footer nav > ul > li.active:before{content:""; position:absolute; display:block; top:0; width:60%; height:6px; background:#ca2026;}
+footer nav > ul > li:last-child{text-align:right;}
 footer nav > ul > li:last-child:hover:before{right:0;}
 footer nav > ul > li a{display:block; padding:12px 0 0 0; text-transform:uppercase; font:20px "LeagueGothic-Regular"; color:#696969; width:100%;}
 footer nav ul li ul{display:none;position:absolute; width:100%; bottom:100%; background:#fafafa; background:rgba(255,255,255,.9); border-left:solid 1px #ca2026; padding:12px 0 0 0; z-index:999;}
