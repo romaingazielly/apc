@@ -20,7 +20,6 @@ $urlVideo = get_post_meta($post->ID, 'url_video', true);
 			<section class="photos sizer">
 				<?php $rows = get_field('project_images'); if (count($rows) > 0) { ?>
 					<?php foreach($rows as $row) {?>
-						<!--<img src="<?php //echo $row['image']; ?>" alt="<?php //the_title() ?>">-->
 						<div class="pic" style="background: url('<?php echo $row['image']; ?>') no-repeat; background-size:cover;"></div>
 					<?php } ?>
 				<?php } ?>

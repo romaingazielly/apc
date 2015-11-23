@@ -10,7 +10,13 @@
 	<main role="main">
 	<!-- section -->
 	<section class="contact-container page-format sizer">
-		<section class="agence contact-map">
+		<section class="enseignements">
+			<?php for ($i=0; $i < 12; $i++) { ?><div class="year">
+				<a href="">
+					<aside>2014 - 2015</aside>
+					<img src="<?php echo get_template_directory_uri(); ?>/img/enseignement.jpg" alt="2014 - 2015">
+				</a>
+			</div><?php } ?>
 		</section><!-- 
 	 --><aside class="map-infos">
 	 		<div>

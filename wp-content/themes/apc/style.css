@@ -1,14 +1,10 @@
 /*
-  Theme Name: HTML5 Blank
-  Theme URI: http://html5blank.com
-  Description: HTML5 Blank WordPress Theme
-  Version: 1.4.3
-  Author: Todd Motto (@toddmotto)
-  Author URI: http://toddmotto.com
-  Tags: Blank, HTML5, CSS3
-
-  License: MIT
-  License URI: http://opensource.org/licenses/mit-license.php
+  Theme Name: APC
+  Description: Atelier Patrick Corda
+  Version: 1.3
+  Author: Romain GAZIELLY (@rgazou)
+  Author URI: http://romain.ninja
+  Tags: HTML5, CSS3
 */
 
 /*------------------------------------*\
@@ -266,11 +262,6 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .mini img{width:100%; height:100%; max-width:none}
 .mini .bigger{cursor:pointer; position:absolute; z-index:2; transition:all .3s ease-in-out; transform-origin:0 0;}
 .mini.giant, .mini:hover{z-index:4;}
-/*.mini:hover img.bigger{transform:scaleX(2.098) scaleY(2.138)}
-.mini:nth-child(5n) img.bigger{transform-origin:right bottom;}
-.mini:nth-child(5) img.bigger{transform-origin:right top;}
-.mini:nth-last-child(-n+5) img.bigger{transform-origin:left bottom;}
-.mini:last-child img.bigger{transform-origin:right bottom;}*/
 .line-container .mini:hover img.bigger{transform:scaleX(2.098) scaleY(2.138)}
 .line-container .mini:last-child img.bigger{transform-origin:right top;}
 .line-container:last-child .mini img.bigger{transform-origin:right bottom;}
@@ -335,26 +326,37 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .agence{display:inline-block; vertical-align: top; background:url('img/agence.jpg') no-repeat center; background-size: cover;}
 
 /*------------------------------------*\
+    ENSEIGNEMENTS
+\*------------------------------------*/
+.enseignements{width:80.775862%; display:inline-block;}
+.year{position:relative; background:red; width: 22.865528%; /* 214.25 ÷ 937 */ display:inline-block; margin: 0 0 2.1344717% 2.1344717%;overflow: hidden;}
+.year:first-child{margin-left:0;}
+.year:nth-child(4n+1){background:blue; margin-left:0;}
+.enseignements aside{position:absolute; top:0; left:0; bottom:0; width:46px; background:#ca2026; font:20px Arial; color:#fff; padding: 18px;word-break: break-all;line-height: 20px;margin: 0; text-align:center;}
+.enseignements img{display:block; max-width:100%; width:auto;}
+
+/*------------------------------------*\
     RESPONSIVE
 \*------------------------------------*/
 
-@media only screen and (min-width:320px) {
-
-}
-@media only screen and (min-width:480px) {
-
-}
-@media only screen and (min-width:768px) {
-
-}
-@media only screen and (min-width:1024px) {
-
-}
-@media only screen and (min-width:1140px) {
-
-}
 @media only screen and (max-width:1199px) {
   .mini{margin-left:1.6949153%;}
+
+}
+@media only screen and (max-width:1550px) {
+  .year aside{font-size:16px;line-height: 18px;}
+
+}
+@media only screen and (max-width:1420px) {
+  .year aside{font-size:14px;line-height: 16px;}
+
+}
+@media only screen and (max-width:1240px) {
+  .year aside{font-size:12px;line-height: 14px;}
+
+}
+@media only screen and (max-width:1080px) {
+  .year aside{font-size:11px;line-height: 12px;}
 
 }
 @media only screen and (-webkit-min-device-pixel-ratio:1.5),
