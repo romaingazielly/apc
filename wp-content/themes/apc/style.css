@@ -287,7 +287,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 /*------------------------------------*\
     CONTACT
 \*------------------------------------*/
-.page-format{height: 600px; width: 100%; padding: 0 20px; margin-bottom: 54px; opacity: 0; visibility: hidden; transition: all .35s ease-in;}
+.page-format{min-height: 600px; width: 100%; padding: 0 20px; margin-bottom: 54px; opacity: 0; visibility: hidden; transition: all .35s ease-in;}
 .page-format .contact-map, .page-format .team-container{height:100%; width:80.775862%; /* 937 ÷ 1160 */ display:inline-block; vertical-align:top;}
 .page-format aside{position:relative; display:inline-block; background:#828282; vertical-align:top; height:100%; width:18.965517%; /* 220 ÷ 1160 */ margin-left:0.25862069%; /* 3 ÷ 1160 */ overflow:hidden; }
 .page-format aside div{padding:20px 10px 0;}
@@ -328,10 +328,11 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 /*------------------------------------*\
     ENSEIGNEMENTS
 \*------------------------------------*/
-.enseignements{width:80.775862%; display:inline-block;}
-.year{position:relative; background:red; width: 22.865528%; /* 214.25 ÷ 937 */ display:inline-block; margin: 0 0 2.1344717% 2.1344717%;overflow: hidden;}
+.enseignements{width:80.775862%; height:100%; display:inline-block;}
+.year{position:relative; width: 22.865528%; /* 214.25 ÷ 937 */ display:inline-block; margin: 0 0 2.1344717% 2.1344717%;overflow: hidden;}
 .year:first-child{margin-left:0;}
-.year:nth-child(4n+1){background:blue; margin-left:0;}
+.year:nth-child(4n+1){margin-left:0;}
+.year:nth-last-child(4), .year:nth-last-child(3), .year:nth-last-child(2), .year:last-child{margin-bottom:0;}
 .enseignements aside{position:absolute; top:0; left:0; bottom:0; width:46px; background:#ca2026; font:20px Arial; color:#fff; padding: 18px;word-break: break-all;line-height: 20px;margin: 0; text-align:center;}
 .enseignements img{display:block; max-width:100%; width:auto; opacity:0;}
 
