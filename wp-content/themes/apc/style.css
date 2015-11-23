@@ -333,7 +333,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .year:first-child{margin-left:0;}
 .year:nth-child(4n+1){background:blue; margin-left:0;}
 .enseignements aside{position:absolute; top:0; left:0; bottom:0; width:46px; background:#ca2026; font:20px Arial; color:#fff; padding: 18px;word-break: break-all;line-height: 20px;margin: 0; text-align:center;}
-.enseignements img{display:block; max-width:100%; width:auto;}
+.enseignements img{display:block; max-width:100%; width:auto; opacity:0;}
 
 /*------------------------------------*\
     RESPONSIVE
