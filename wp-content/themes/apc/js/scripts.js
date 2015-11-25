@@ -63,19 +63,17 @@ var t;
 			sameSize();
 		}
 
+		if($('body').hasClass('equipe')){
+			var maxH = $('.team-container').height();
+			$('.page-format').height(maxH);
+		}
+
 		$(window).resize(function(event){
 			resizeWindow();
 			delay(function(){
 		    	sameSize();
 				logoSize();
 		    }, 500);
-
-
-
-		    // if(jQuery('body').hasClass('contact')){
-		    // 	var contactH = window.innerHeight();
-		    // 	jQuery('.contact-container').height(contactH);
-		    // }
 		})
 
 		// Clic sur i

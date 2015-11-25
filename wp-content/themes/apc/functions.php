@@ -441,10 +441,24 @@ add_action('init', function () {
     register_post_type('membres', array(
         'labels' => array(
             'name' => 'Membres',
-            'singular_name' => 'Membres',
+            'singular_name' => 'Membre',
             'new_item' => 'Nouveau membre',
             'add_new_item' => 'Ajouter un membre',
             'edit_item' => 'Modifier le membre',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'hierarchical' => true,
+        'supports' => array('thumbnail', 'title', 'content'),
+    ));
+
+    register_post_type('enseignements', array(
+        'labels' => array(
+            'name' => 'Enseignements',
+            'singular_name' => 'Enseignement',
+            'new_item' => 'Nouvel enseignement',
+            'add_new_item' => 'Ajouter un enseignement',
+            'edit_item' => 'Modifier l\'enseignement',
         ),
         'public' => true,
         'has_archive' => true,

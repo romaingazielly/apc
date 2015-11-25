@@ -302,6 +302,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .page-format .team-m{position:relative; display: inline-block; vertical-align: top; margin:0 1.6949153% 1.6949153% 0; width:23.376623%; /* 216 ÷ 924 */ cursor:pointer;}
 .page-format .team-m:hover figcaption{opacity:1;}
 .page-format .team-m:nth-child(4n){margin-right:0;}
+.page-format .team-m:nth-last-child(4), .page-format .team-m:nth-last-child(3), .page-format .team-m:nth-last-child(2), .page-format .team-m:last-child{margin-bottom:0;}
 .page-format .team-m img{width:100%;}
 .page-format .team-m figcaption{position:absolute; opacity:0; top:0; left:0; right:0; bottom:0; padding:20px; background:rgba(202,32,38,.8); color:#fff; transition:all .3s ease-out;}
 .page-format .team-m figcaption h2{padding:0 0 10px 0; margin:0 0 20px 0; border-bottom:solid 1px #fff; font-size:20px; text-transform:uppercase; letter-spacing: 1px;}
@@ -330,7 +331,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
     ENSEIGNEMENTS
 \*------------------------------------*/
 .enseignements{width:80.775862%; height:100%; display:inline-block;}
-.year{position:relative; width: 22.865528%; /* 214.25 ÷ 937 */ display:inline-block; margin: 0 0 2.1344717% 2.1344717%;overflow: hidden;}
+.year{position:relative; width: 22.865528%; /* 214.25 ÷ 937 */ max-height:220px; display:inline-block; margin: 0 0 2.1344717% 2.1344717%;overflow: hidden;}
 .year:first-child{margin-left:0;}
 .year:nth-child(4n+1){margin-left:0;}
 .year:nth-last-child(4), .year:nth-last-child(3), .year:nth-last-child(2), .year:last-child{margin-bottom:0;}

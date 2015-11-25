@@ -3,7 +3,7 @@
 	<?php
 
 	$post = get_page_by_path('equipe',OBJECT,'page');
-	$content = $post->post_content
+	$content = $post->post_content;
 
 	?>
 	<main role="main">
