@@ -11,7 +11,7 @@
 	<!-- section -->
 	<section class="contact-container page-format sizer">
 		<section class="enseignements">
-			<?php if (have_posts()): while (have_posts()) : the_post(); ?><div class="year" style="background:url('<?php echo get_template_directory_uri(); ?>/img/enseignement.jpg'); background-size:cover;">
+			<?php if (have_posts()): while (have_posts()) : the_post(); ?><div class="year" style="background:url('<?php echo $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>'); background-size:cover;">
 				<a href="">
 					<aside><?php echo get_the_title() ?></aside>
 					<img src="<?php echo $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); ?>" alt="<?php echo get_the_title() ?>">
