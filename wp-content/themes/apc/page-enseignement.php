@@ -3,6 +3,7 @@
 	<?php
 
 	$post = get_page_by_path('enseignement',OBJECT,'page');
+	$content = $post->post_content;
 
 	?>
 	<main role="main">
@@ -19,7 +20,7 @@
 	 --><aside class="map-infos">
 	 		<div>
 				<h1>Enseignement</h1>
-				<p><?php echo get_post_meta($post->ID, 'description', true) ?></p>
+				<p><?php echo $content ?></p>
 			</div>
 		</aside>
 	</section>

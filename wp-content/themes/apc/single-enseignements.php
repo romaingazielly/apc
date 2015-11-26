@@ -35,7 +35,7 @@ $content = $post->post_content;
 				<div>
 					<!-- Appel des champs ACF -->
 					<h1><?php echo get_the_title($post->ID) ?></h1>
-					<p><?php echo $content; ?></p>
+					<p><?php echo get_post_meta($post->ID, 'description', true) ?></p>
 					<a class="back" href="<?php bloginfo('url') ?>/enseignement/">Retour</a>
 				</div>
 		</article>
