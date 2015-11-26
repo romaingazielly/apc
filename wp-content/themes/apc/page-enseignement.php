@@ -22,7 +22,6 @@
 	 		<div>
 				<h1>Enseignement</h1>
 				<p><?php echo $content ?></p>
-				<!-- <a class="back" href="<?php bloginfo('url') ?>/enseignement/">Retour</a> -->
 			</div>
 		</aside>
 	</section>
