@@ -36,7 +36,7 @@ var t;
 
 		// Dans le cas ou on a qu'une seule photo
 		$(document).ready(function() {
-			if( $('body').hasClass('single-project') ){
+			if( $('body').hasClass('single-project') || $('body').hasClass('single-enseignements') ){
 				resizeWindow();
 				sameSize();
 			}
