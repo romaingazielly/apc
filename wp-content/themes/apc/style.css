@@ -217,8 +217,8 @@ footer nav ul li ul li a:hover{color:#ca2026;}
     PROJECT DETAIL
 \*------------------------------------*/
 .projet{width:100%; padding:0 20px; margin-bottom:61px; opacity:0; visibility:hidden; transition:all .35s ease-in;}
-.photos{display:inline-block; width:80.775862%; /* 937 ÷ 1160 */ vertical-align:top;}
-.photos .pic{width:100%; height:100%;}
+.photos, .solophoto{display:inline-block; width:80.775862%; /* 937 ÷ 1160 */ vertical-align:top;}
+.photos .pic, .solophoto .pic{width:100%; height:100%;}
 .owl-controls{position:absolute; bottom:20px; width:100%; text-align:center; z-index:5;}
 .owl-dot{display:inline-block; width:10px; height:10px; background:#ca2026; border:solid 1px #ca2026; margin-right:10px;}
 .owl-dot.active{background:#fafafa;}
@@ -307,7 +307,6 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .page-format .team-m figcaption{position:absolute; opacity:0; top:0; left:0; right:0; bottom:0; padding:20px; background:rgba(202,32,38,.8); color:#fff; transition:all .3s ease-out;}
 .page-format .team-m figcaption h2{padding:0 0 10px 0; margin:0 0 20px 0; border-bottom:solid 1px #fff; font-size:20px; text-transform:uppercase; letter-spacing: 1px;}
 .page-format .team-m figcaption p{font:13px/15px Arial;}
-.page-format a.back{display:block; position:absolute; bottom:0; left:0; right:0; height:69px; background:#1d1d1d; text-align:center; font:20px/69px Arial; color:#fff;}
 
 /*------------------------------------*\
     ACTUALITES
@@ -337,7 +336,8 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .year:nth-last-child(4), .year:nth-last-child(3), .year:nth-last-child(2), .year:last-child{margin-bottom:0;}
 .enseignements aside{position:absolute; top:0; left:0; bottom:0; width:46px; background:#ca2026; font:20px Arial; color:#fff; padding: 18px;word-break: break-all;line-height: 20px;margin: 0; text-align:center;}
 .enseignements img{display:block; max-width:100%; width:auto; opacity:0;}
-
+.enseignement-single .no h1{margin:20px;}
+.enseignement-single a.back{display:block; position:absolute; bottom:0; left:0; right:0; height:69px; background:#1d1d1d; text-align:center; font:20px/69px Arial; color:#fff;}
 /*------------------------------------*\
     RESPONSIVE
 \*------------------------------------*/

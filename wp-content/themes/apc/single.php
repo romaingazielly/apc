@@ -17,13 +17,20 @@ $urlVideo = get_post_meta($post->ID, 'url_video', true);
 
 		<!-- article -->
 		<article class="projet" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-			<section class="photos sizer">
-				<?php $rows = get_field('project_images'); if (count($rows) > 0) { ?>
+			<?php $rows = get_field('project_images'); 
+			if (count($rows) > 1) { 
+		  ?><section class="photos sizer">
 					<?php foreach($rows as $row) {?>
 						<div class="pic" style="background: url('<?php echo $row['image']; ?>') no-repeat; background-size:cover;"></div>
 					<?php } ?>
+			</section><?php 
+			}else{ 
+			?><section class="solophoto sizer">
+				<?php foreach($rows as $row) {?>
+				<div class="pic" style="background: url('<?php echo $row['image']; ?>') no-repeat; background-size:cover;"></div>
 				<?php } ?>
-			</section><!-- 
+			</section><?php 
+			} ?><!-- 
 		 --><aside class="infos">
 				<div>
 					<!-- Appel des champs ACF -->

@@ -30,19 +30,16 @@ var t;
 
 		// Carousel
 		$('.photos').on('initialized.owl.carousel', function(){
-			// Vars
 			resizeWindow();
 			sameSize();
-			// var imgH = $('.photos').height();
-			// var h1H = $('.infos h1').height();
-			// setTimeout(function() { var h2H = $('.infos h2').height(); $('.infos p').height(imgH-(69 + h1H + h2H)); console.log(h2H)}, 500);
-			// //
+		});
 
-			// // Adaptation du bloc info par rapport à la taille de l'image
-			// $('.infos').height(imgH);
-
-			// Adaptation de la hauteur du contenu
-			// $('.infos p').height(imgH-(69 + h1H + h2H));
+		// Dans le cas ou on a qu'une seule photo
+		$(document).ready(function() {
+			if( $('body').hasClass('single-project') ){
+				resizeWindow();
+				sameSize();
+			}
 		});
 
 		$('.photos').owlCarousel({
@@ -202,7 +199,7 @@ function linkIt(){
 }
 
 function sameSize(){
-	var imgH = jQuery('.photos').height();
+	var imgH = jQuery('.photos, .solophoto').height();
 	jQuery('.projet').height(imgH);
 }
 
