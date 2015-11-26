@@ -1,2 +1,5 @@
 .htaccess
+.htpasswd
 .DS_STORE
+wp-content/uploads/
+wp-config.php
