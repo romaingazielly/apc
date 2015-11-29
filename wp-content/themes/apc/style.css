@@ -183,8 +183,8 @@ footer{position:fixed; bottom:0; z-index:300; width:100%; border-top:solid 2px #
 footer nav{padding-bottom:13px; width:calc(100% - 40px); margin:0 0 0 20px;}
 footer nav > ul > li {position:relative; display:inline-block; vertical-align:middle; width:20%;}
 footer nav > ul > li:hover:before, footer nav > ul > li.active:before{content:""; position:absolute; display:block; top:0; width:60%; height:6px; background:#ca2026;}
-footer nav > ul > li:last-child{text-align:right;}
-footer nav > ul > li:last-child:hover:before{right:0;}
+/*footer nav > ul > li:last-child{text-align:right;}
+footer nav > ul > li:last-child:hover:before{right:0;}*/
 footer nav > ul > li a{display:block; padding:12px 0 0 0; text-transform:uppercase; font:20px "LeagueGothic-Regular"; color:#696969; width:100%;}
 footer nav ul li ul{display:none;position:absolute; width:100%; bottom:100%; background:#fafafa; background:rgba(255,255,255,.9); border-left:solid 1px #ca2026; padding:12px 0 0 0; z-index:999;}
 footer nav ul li:hover ul{display:block; z-index:999; border-bottom:solid 2px #111;}
@@ -278,7 +278,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
     DIAPO
 \*------------------------------------*/
 #diapo{position:fixed; display:none; top:0; bottom:0; left:0; right:0; opacity:0; z-index: 100; background:#828282;}
-#diapo:before{content:""; display:block; width:123px; height:125px; position:absolute; background:url('img/logo-diapo.jpg') no-repeat center; right:20px; top:20px; z-index:2; opacity:0; transition:opacity .5s ease-out;}
+#diapo:before{content:""; display:block; width:81px; height:81px; position:absolute; background:url('img/logo-diapo.jpg') no-repeat center; right:20px; top:20px; z-index:2; opacity:0; background-size:cover; transition:opacity .5s ease-out;}
 #diapo.playing:before{opacity: 1;}
 #diapo:after{content:"© Atelier Patrick Corda - architecture programmation conseil"; position:fixed; bottom:20px; left:20px; color:#fff; font:11px "Lato-Regular"; text-transform:uppercase; pointer-events:none; text-shadow: 1px 1px rgb(79, 73, 73);}
 #diapo .diapo{height:100%; width:100%;}
@@ -287,8 +287,8 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 /*------------------------------------*\
     CONTACT
 \*------------------------------------*/
-.page-format{min-height: 600px; width: 100%; padding: 0 20px; margin-bottom: 54px; opacity: 0; visibility: hidden; transition: all .35s ease-in;}
-.page-format .contact-map, .page-format .team-container{width:80.775862%; /* 937 ÷ 1160 */ display:inline-block; vertical-align:top;}
+.page-format{/*min-height: 600px; */width: 100%; padding: 0 20px; margin-bottom: 54px; opacity: 0; visibility: hidden; transition: all .35s ease-in;}
+.page-format .contact-map{height:100%; width:80.775862%; /* 937 ÷ 1160 */ display:inline-block; vertical-align:top;}
 .page-format aside{position:relative; display:inline-block; background:#828282; vertical-align:top; height:100%; width:18.965517%; /* 220 ÷ 1160 */ margin-left:0.25862069%; /* 3 ÷ 1160 */ overflow:hidden; }
 .page-format aside div{padding:20px 10px 0;}
 .page-format aside h1{font:24px "LeagueGothic-Regular"; color:#fafafa; text-transform:uppercase; padding:0 0 5px 0; border-bottom:solid 1px #fff; margin:0 0 10px 0;}
@@ -325,6 +325,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
     AGENCE
 \*------------------------------------*/
 .agence{display:inline-block; vertical-align: top; background:url('img/agence.jpg') no-repeat center; background-size: cover;}
+.page-format .team-container{width:80.775862%; /* 937 ÷ 1160 */ display:inline-block; vertical-align:top; margin-bottom:71px;}
 
 /*------------------------------------*\
     ENSEIGNEMENTS

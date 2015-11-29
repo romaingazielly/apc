@@ -2,9 +2,8 @@
 
 	<?php
 
-	$post = get_page_by_path('about',OBJECT,'page');
+	$post = get_page_by_path('a-propos',OBJECT,'page');
 	$content = $post->post_content;
-
 	?>
 	<main role="main">
 	<!-- section -->
