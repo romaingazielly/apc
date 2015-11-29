@@ -62,7 +62,7 @@ var t;
 
 		if($('body').hasClass('equipe')){
 			var maxH = $('.team-container').height();
-			$('.page-format').height(maxH);
+			setTimeout(function(){ $('.page-format').height(maxH); }, 500);
 		}
 
 		$(window).resize(function(event){
