@@ -40,6 +40,11 @@ var t;
 				resizeWindow();
 				sameSize();
 			}
+
+			if($('body').hasClass('equipe')){
+				var maxH = $('.team-container').height();
+				$('.page-format').height(maxH);
+			}
 		});
 
 		$('.photos').owlCarousel({
@@ -58,11 +63,6 @@ var t;
 		if($('body').hasClass('contact') || $('body').hasClass('enseignement') || $('body').hasClass('a-propos')){
 			resizeWindow();
 			sameSize();
-		}
-
-		if($('body').hasClass('equipe')){
-			var maxH = $('.team-container').height();
-			setTimeout(function(){ $('.page-format').height(maxH); }, 500);
 		}
 
 		$(window).resize(function(event){
