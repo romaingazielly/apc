@@ -288,7 +288,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
     CONTACT
 \*------------------------------------*/
 .page-format{min-height: 600px; width: 100%; padding: 0 20px; margin-bottom: 54px; opacity: 0; visibility: hidden; transition: all .35s ease-in;}
-.page-format .contact-map, .page-format .team-container{height:100%; width:80.775862%; /* 937 ÷ 1160 */ display:inline-block; vertical-align:top;}
+.page-format .contact-map, .page-format .team-container{width:80.775862%; /* 937 ÷ 1160 */ display:inline-block; vertical-align:top;}
 .page-format aside{position:relative; display:inline-block; background:#828282; vertical-align:top; height:100%; width:18.965517%; /* 220 ÷ 1160 */ margin-left:0.25862069%; /* 3 ÷ 1160 */ overflow:hidden; }
 .page-format aside div{padding:20px 10px 0;}
 .page-format aside h1{font:24px "LeagueGothic-Regular"; color:#fafafa; text-transform:uppercase; padding:0 0 5px 0; border-bottom:solid 1px #fff; margin:0 0 10px 0;}
