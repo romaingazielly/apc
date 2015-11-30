@@ -14,12 +14,12 @@
 						 --><li><a href="<?php bloginfo('url') ?>/actus">Actualites</a></li><!-- 
 						 --><li>
 								<a href="/">Realisations</a>
-								<ul>
-									<li><a href="#">Logements</a></li>
-									<li><a href="#">Bureaux</a></li>
-									<li><a href="#">Hotellerie et commerces</a></li>
-									<li><a href="#">Équipements</a></li>
-									<li><a href="#">Urbanisme</a></li>
+								<ul class="<?php echo get_site_url(); ?> hihi">
+									<li><a href="<?php bloginfo('url') ?>/?categorie=logement">Logements</a></li>
+									<li><a href="<?php bloginfo('url') ?>/?categorie=bureaux">Bureaux</a></li>
+									<li><a href="<?php bloginfo('url') ?>/?categorie=hotellerie_commerces">Hotellerie et commerces</a></li>
+									<li><a href="<?php bloginfo('url') ?>/?categorie=equipements">Équipements</a></li>
+									<li><a href="<?php bloginfo('url') ?>/?categorie=urbanisme">Urbanisme</a></li>
 								</ul>
 							</li><!--
 						 --><li><a href="<?php bloginfo('url') ?>/enseignement/">Enseignement</a></li><!-- 

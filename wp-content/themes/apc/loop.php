@@ -2,10 +2,18 @@
 
 $paged = $_GET['page'] ? $_GET['page'] : 1;
 
+$category = $_GET['categorie'];
+
 $a = 0;
 global $post;
 $nbProj = $wp_query->post_count;
-query_posts('post_type=project&paged='.$paged); ?> <!-- https://codex.wordpress.org/Class_Reference/WP_Query#Parameters -->
+$args = array(
+	'post_type' => 'project',
+	'paged' => $paged,
+	'meta_key' => 'categorie',
+	'meta_value' => $category
+);
+query_posts($args); ?> <!-- https://codex.wordpress.org/Class_Reference/WP_Query#Parameters -->
 
 	<!-- article -->
 	<article class="list">
