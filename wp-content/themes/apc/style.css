@@ -262,7 +262,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .mini img{width:100%; height:100%; max-width:none}
 .mini .bigger{cursor:pointer; position:absolute; z-index:2; transition:all .3s ease-in-out; transform-origin:0 0; pointer-events:none;}
 .mini.giant, .mini:hover{z-index:4;}
-.line-container .mini:hover img.bigger{transform:scaleX(2.098) scaleY(2.138)}
+.line-container .mini:hover img.bigger{transform:scaleX(2.098) scaleY(2.141)}
 .line-container .mini:last-child img.bigger{transform-origin:right top;}
 .line-container:last-child .mini img.bigger{transform-origin:right bottom;}
 .line-container:last-child .mini:first-child img.bigger{transform-origin:left bottom;}
