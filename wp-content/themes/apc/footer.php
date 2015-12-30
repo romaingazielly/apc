@@ -14,7 +14,7 @@
 						 --><li><a href="<?php bloginfo('url') ?>/actus">Actualites</a></li><!-- 
 						 --><li>
 								<a href="/">Realisations</a>
-								<ul class="<?php echo get_site_url(); ?> hihi">
+								<ul>
 									<li><a href="<?php bloginfo('url') ?>/?categorie=logement">Logements</a></li>
 									<li><a href="<?php bloginfo('url') ?>/?categorie=bureaux">Bureaux</a></li>
 									<li><a href="<?php bloginfo('url') ?>/?categorie=hotellerie_commerces">Hotellerie et commerces</a></li>
