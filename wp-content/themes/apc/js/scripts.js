@@ -62,7 +62,7 @@ var t;
 			loop:true,
 			autoplayTimeout:2000,
 			smartSpeed:1200,
-			autoplayHoverPause:true,
+			//autoplayHoverPause:true,
 			dots:true
 		});
 
@@ -236,7 +236,7 @@ function playDiapo(e){
 			loop:true,
 			autoplayTimeout:2000,
 			smartSpeed:1200,
-			autoplayHoverPause:true,
+			//autoplayHoverPause:true,
 			dots:false
 		});
 
