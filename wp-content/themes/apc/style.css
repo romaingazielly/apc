@@ -260,12 +260,14 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .mini{position:relative; width:18.305085%; /* 216 ÷ 1080 */ display:inline-block; margin:0 0 1.6949153% 1.6949153%; z-index:3;}
 .mini a{display:block; margin:0;}
 .mini img{width:100%; height:100%; max-width:none}
-.mini .bigger{cursor:pointer; position:absolute; z-index:2; transition:all .3s ease-in-out; transform-origin:0 0; pointer-events:none;}
+.mini .bigger{cursor:pointer; position:absolute; z-index:2; transition:transform .3s ease-in-out; transform-origin:left bottom; pointer-events:none;}
 .mini.giant, .mini:hover{z-index:4;}
-.line-container .mini:hover img.bigger{transform:scaleX(2.098) scaleY(2.141)}
-.line-container .mini:last-child img.bigger{transform-origin:right top;}
-.line-container:nth-last-child(2) .mini img.bigger{transform-origin:left bottom;}
-.line-container:nth-last-child(2) .mini:last-child img.bigger{transform-origin:right bottom;}
+.line-container .mini:hover img.bigger{transform:scaleX(2.098) scaleY(2.141);}
+.line-container:first-child .mini img.bigger{transform-origin:left top;} /* Première ligne */
+.line-container:first-child .mini:last-child img.bigger{transform-origin:right top;} /* La dernière de la première ligne */
+.line-container .mini:last-child img.bigger{transform-origin:right bottom;} /*  La dernière de chaque ligne */
+.line-container:nth-last-child(2) .mini img.bigger{transform-origin:left bottom;} /* hack */
+.line-container:nth-last-child(2) .mini:last-child img.bigger{transform-origin:right bottom;} /* hack */
 .line-container:last-child .mini img.bigger{transform-origin:right bottom;}
 .line-container:last-child .mini:first-child img.bigger{transform-origin:left bottom;}
 .line-container:last-child .mini:nth-child(5) img.bigger{transform-origin:right bottom;}
