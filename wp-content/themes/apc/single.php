@@ -21,13 +21,13 @@ $urlVideo = get_post_meta($post->ID, 'url_video', true);
 			if (count($rows) > 1) { 
 		  ?><section class="photos sizer">
 					<?php foreach($rows as $row) {?>
-						<div class="pic" style="background: url('<?php echo $row['image']; ?>') no-repeat; background-size:contain;"></div>
+						<div class="pic" style="background: url('<?php echo $row['image']; ?>') no-repeat; background-size:contain; background-position:center;"></div>
 					<?php } ?>
 			</section><?php 
 			}else{ 
 			?><section class="solophoto sizer">
 				<?php foreach($rows as $row) {?>
-				<div class="pic" style="background: url('<?php echo $row['image']; ?>') no-repeat; background-size:contain;"></div>
+				<div class="pic" style="background: url('<?php echo $row['image']; ?>') no-repeat; background-size:contain; background-position:center;"></div>
 				<?php } ?>
 			</section><?php 
 			} ?><!-- 
