@@ -267,7 +267,9 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 .line-container:first-child .mini:last-child img.bigger{transform-origin:right top;} /* La dernière de la première ligne */
 .line-container .mini:last-child img.bigger{transform-origin:right bottom;} /*  La dernière de chaque ligne */
 .line-container:nth-last-child(2) .mini img.bigger{transform-origin:left bottom;} /* hack */
+.line-container:nth-last-child(2):first-child .mini img.bigger{transform-origin:left top;} /* hack */
 .line-container:nth-last-child(2) .mini:last-child img.bigger{transform-origin:right bottom;} /* hack */
+.line-container:nth-last-child(2):first-child .mini:last-child img.bigger{transform-origin:right top;} /* hack */
 .line-container:last-child .mini img.bigger{transform-origin:right bottom;}
 .line-container:last-child .mini:first-child img.bigger{transform-origin:left bottom;}
 .line-container:last-child .mini:nth-child(5) img.bigger{transform-origin:right bottom;}
