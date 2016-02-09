@@ -4,7 +4,7 @@ Plugin Name: Require Featured Image
 Plugin URI: http://pressupinc.com/wordpress-plugins/require-featured-image/
 Description: Like it says on the tin: requires posts to have a featured image set before they'll be published.
 Author: Press Up
-Version: 1.2.0
+Version: 1.2.1
 Author URI: http://pressupinc.com
 Text Domain: require-featured-image
 */
@@ -13,10 +13,8 @@ require_once('admin-options.php');
 
 add_action( 'transition_post_status', 'rfi_guard', 10, 3 );
 function rfi_guard( $new_status, $old_status, $post ) {
-    if ( $new_status === 'publish'
-        && !rfi_should_let_post_publish( $post ) ) {
-        $warning_message = rfi_check_size_is_set();
-        wp_die( __( $warning_message, 'require-featured-image' ) );
+    if ( $new_status === 'publish' && !rfi_should_let_post_publish( $post ) ) {
+        wp_die( rfi_get_warning_message() );
     }
 }
 
@@ -38,15 +36,15 @@ function rfi_textdomain_init() {
 add_action( 'admin_enqueue_scripts', 'rfi_enqueue_edit_screen_js' );
 function rfi_enqueue_edit_screen_js( $hook ) {
     global $post;
-	if ( $hook !== 'post.php' && $hook !== 'post-new.php' )
+	if ( $hook !== 'post.php' && $hook !== 'post-new.php' ) {
         return;
+    }
 
     if ( in_array( $post->post_type, rfi_return_post_types() ) ) {
-        $minimum_size = get_option('rfi_minimum_size');
-
         wp_register_script( 'rfi-admin-js', plugins_url( '/require-featured-image-on-edit.js', __FILE__ ), array( 'jquery' ) );
         wp_enqueue_script( 'rfi-admin-js' );
 
+        $minimum_size = get_option( 'rfi_minimum_size' );
         wp_localize_script(
             'rfi-admin-js',
             'passedFromServer',
@@ -73,8 +71,7 @@ function rfi_return_post_types() {
     if ( $option === 'default' ) {
         $option = array( 'post' );
         add_option( 'rfi_post_types', $option );
-    }
-    elseif ( $option === '' ) {
+    } elseif ( $option === '' ) {
         // For people who want the plugin on, but doing nothing
         $option = array();
     }
@@ -93,46 +90,45 @@ function rfi_enforcement_start_time() {
     return apply_filters( 'rfi_enforcement_start', (int)$option );
 }
 
-function rfi_check_featured_image_size($post){
-    if(has_post_thumbnail($post->ID)){
-        $image_id = get_post_thumbnail_id($post->ID);
-        if($image_id != null){
-            $image_meta = wp_get_attachment_image_src($image_id, 'full');
-            $width = $image_meta[1];
-            $height = $image_meta[2];
-            $minimum_size = get_option('rfi_minimum_size');
-
-            if ($width < $minimum_size['width'] ){
-                return false;
-            }
-            elseif ($height <  $minimum_size['height']){
-                return false;
-            }
-            else{
-                return true;
-            }
+function rfi_posts_featured_image_is_large_enough($post) {
+    if ( has_post_thumbnail( $post->ID ) ) {
+        $image_id = get_post_thumbnail_id( $post->ID );
+        if ( $image_id === null ) {
+            return false;
         }
+        $image_meta = wp_get_attachment_image_src( $image_id, 'full' );
+        $width = $image_meta[1];
+        $height = $image_meta[2];
+        $minimum_size = get_option( 'rfi_minimum_size' );
+
+        if ( $width >= $minimum_size['width'] && $height >=  $minimum_size['height'] ){
+            return true;
+        }
+        return false;
     }
 }
 
-function rfi_check_size_is_set(){
+function rfi_get_warning_message() {
     $minimum_size = get_option('rfi_minimum_size');
-    if($minimum_size['width'] == 0 && $minimum_size['height'] == 0){
-        return "You cannot publish without a featured image.";
+    // Legacy case
+    if ( $minimum_size['width'] == 0 && $minimum_size['height'] == 0 ) {
+        return __( 'You cannot publish without a featured image.', 'require-featured-image' );
     }
-    else{
-        return "You cannot publish without a featured image which is at least ". $minimum_size['width'] ."x".$minimum_size['height']." pixels.";
-    }
+    return sprintf(
+        __( 'You cannot publish without a featured image that is at least %s x %s pixels.', 'require-featured-image' ),
+        $minimum_size['width'],
+        $minimum_size['height']
+    );
 }
 
 function rfi_should_let_post_publish( $post ) {
     $has_featured_image = has_post_thumbnail( $post->ID );
     $is_watched_post_type = in_array( $post->post_type, rfi_return_post_types() );
     $is_after_enforcement_time = strtotime( $post->post_date ) > rfi_enforcement_start_time();
-    $image_size_check = rfi_check_featured_image_size($post);
+    $image_is_large_enough = rfi_posts_featured_image_is_large_enough( $post );
 
     if ( $is_after_enforcement_time && $is_watched_post_type ) {
-        return $has_featured_image && $image_size_check;
+        return $has_featured_image && $image_is_large_enough;
     }
     return true;
 }
