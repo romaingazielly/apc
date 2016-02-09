@@ -478,6 +478,20 @@ add_action('init', function () {
         'has_archive' => true,
         'hierarchical' => true,
     ));
+
+    register_post_type('diaporama', array(
+        'labels' => array(
+            'name' => 'Diaporama',
+            'singular_name' => 'diaporama',
+            'new_item' => 'Ajouter un projet au diaporama',
+            'add_new_item' => 'Ajouter un projet au diaporama',
+            'edit_item' => 'Modifier',
+        ),
+        'public' => true,
+        'has_archive' => true,
+        'hierarchical' => true,
+        'supports' => array('thumbnail', 'title', 'content'),
+    ));
 });
 
 

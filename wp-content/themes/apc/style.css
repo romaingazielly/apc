@@ -289,6 +289,7 @@ footer nav ul li ul li a:hover{color:#ca2026;}
 #diapo:after{content:"© Atelier Patrick Corda - architecture programmation conseil"; position:fixed; bottom:20px; left:20px; color:#fff; font:11px "Lato-Regular"; text-transform:uppercase; pointer-events:none; text-shadow: 1px 1px rgb(79, 73, 73);}
 #diapo .diapo{height:100%; width:100%;}
 #diapo .diapo a{display: block; height:100%; width:100%;}
+#diapo .diapo-title{display:inline-block; color:#111; font: 24px "LeagueGothic-Regular"; margin:20px; background:#fff; text-transform:uppercase; padding:10px;}
 
 /*------------------------------------*\
     CONTACT
